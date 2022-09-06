@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    width: 100%;
+    min-height: 10vh;
+    margin: auto;
+    align-items: center;
+    /* background: black; */
+}
+.container .logo{
+    flex: 1;
+    margin: auto;
+}
+.container .logo img{
+    width: 20vh;
+}
