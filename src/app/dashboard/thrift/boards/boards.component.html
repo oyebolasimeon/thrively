@@ -1,0 +1,29 @@
+<section id="board">
+    <button class="back-btn" (click)="back()" ><i class="fa fa-backward"></i></button>
+    <div class="container">
+        <div class="inner-container">
+            <div class="thrift">
+                <img *ngIf="loading" style="width: 80%;" (load)="onLoad()" src="/assets/loader.gif" alt="loading" />
+                <a routerLink="/create-thrift">
+                    <img *ngIf="!loading"  src="./assets/thrift.jpg" alt="" srcset="">
+               </a>
+                <h3 *ngIf="!loading">Create thrift</h3>
+            </div>
+            <div class="campaign">
+                <img  *ngIf="loading" style="width: 80%;" (load)="onLoad()" src="/assets/loader.gif" alt="loading" />
+                <img *ngIf="!loading" src="./assets/campaign.jpg" alt="" srcset="">
+                <h3 *ngIf="!loading">Edit Thrift</h3>
+            </div>
+            <div class="campaign">
+                <img  *ngIf="loading" style="width: 80%;" (load)="onLoad()" src="/assets/loader.gif" alt="loading" />
+                <img *ngIf="!loading" src="./assets/campaign.jpg" alt="" srcset="">
+                <h3 *ngIf="!loading">Active Thrift</h3>
+            </div>
+            
+        </div>
+        
+    </div>
+
+
+
+</section>

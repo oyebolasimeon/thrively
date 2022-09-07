@@ -1,0 +1,40 @@
+<app-nav-bar></app-nav-bar>
+
+<section id="new-thrift">
+    <button class="back-btn" (click)="back()" ><i class="fa fa-backward"></i></button>
+    
+    <div class="container">
+        
+        <div class="thrift-form">
+            <h3>Create Thrift <small>Fill in all required details</small></h3>
+            <form>
+                <input type="text"
+              id="thrift-name"
+              formControlName="email"
+              placeholder="Thrift Name"
+              required><br>
+              <input type="number"
+              id="amount"
+              formControlName="amount"
+              placeholder="Contribution Amount"
+              required><br>
+              <input type="text"
+              id="amount"
+              formControlName="amount"
+              placeholder="Contribution Amount"
+              required><br>
+              <textarea id="description" placeholder="Thrift Purpose Description"  cols="20" rows="10"></textarea>
+              <input type="number"
+              id="amount"
+              formControlName="users"
+              placeholder="Number of People"
+              required><br>
+              <select name="schedule" id="schedule" formControlName="schedule">
+                <option value="">Weekly</option>
+                <option value="">Monthly</option>
+              </select>
+            </form>
+        </div>
+    </div>
+
+</section>

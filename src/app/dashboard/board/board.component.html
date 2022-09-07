@@ -1,0 +1,32 @@
+<section id="board">
+
+    <div class="container">
+        <div class="inner-container">
+            <div class="thrift">
+                <img *ngIf="loading" style="width: 80%;" (load)="onLoad()" src="/assets/loader.gif" alt="loading" />
+                <a routerLink="/thrift">
+                    <img *ngIf="!loading"  src="./assets/thrift.jpg" alt="" srcset="">
+                </a>
+                <h3 *ngIf="!loading">thrift</h3>
+            </div>
+            <div class="campaign">
+                <img  *ngIf="loading" style="width: 80%;" (load)="onLoad()" src="/assets/loader.gif" alt="loading" />
+                <img *ngIf="!loading" src="./assets/campaign.jpg" alt="" srcset="">
+                <h3 *ngIf="!loading">My Thrift Logs</h3>
+            </div>
+            <div class="event">
+                <img *ngIf="loading" style="width: 80%;" (load)="onLoad()" src="/assets/loader.gif" alt="loading" />
+                <img *ngIf="!loading" style="width: 50%;" src="./assets/event.jpg" alt="" srcset="">
+                <h3 *ngIf="!loading">News and Events</h3>
+            </div>
+            <div class="features">
+                <img *ngIf="loading" style="width: 80%;" (load)="onLoad()" src="/assets/loader.gif" alt="loading" />
+                <img *ngIf="!loading" style="width: 50%;" src="./assets/features.jpg" alt="" srcset=""> 
+                <h3 *ngIf="!loading">Upcoming Features</h3>
+            </div>
+        </div>
+        
+    </div>
+    
+
+</section>
