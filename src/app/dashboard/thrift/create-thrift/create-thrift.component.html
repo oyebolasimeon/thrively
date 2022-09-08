@@ -1,38 +1,71 @@
 <app-nav-bar></app-nav-bar>
 
 <section id="new-thrift">
-    <button class="back-btn" (click)="back()" ><i class="fa fa-backward"></i></button>
+    <button class="back-btn" (click)="back()" ><i class="fa fa-backward"><span> BACK</span></i></button>
     
     <div class="container">
         
         <div class="thrift-form">
             <h3>Create Thrift <small>Fill in all required details</small></h3>
-            <form>
+            <form [formGroup]="createThrift">
+              <fieldset>
+                <legend>Thrift Name</legend>
                 <input type="text"
-              id="thrift-name"
-              formControlName="email"
-              placeholder="Thrift Name"
-              required><br>
-              <input type="number"
+                id="thriftName"
+                formControlName="thriftName"
+                required>
+              </fieldset>
+
+              <fieldset>
+                <legend>Thrift Type</legend>
+                <select [(ngModel)]="thriftType" [value]="thriftType"  id="thriftType" >
+                  <option value={{thriftType}} default></option>
+                  <option value="">Weekly</option>
+                  <option value="">Monthly</option>
+                </select>
+              </fieldset>
+               
+              <fieldset>
+                <legend>Contribution Amount (₦)</legend>
+                <input type="number"
               id="amount"
+              min="2"
               formControlName="amount"
-              placeholder="Contribution Amount"
-              required><br>
-              <input type="text"
-              id="amount"
-              formControlName="amount"
-              placeholder="Contribution Amount"
-              required><br>
-              <textarea id="description" placeholder="Thrift Purpose Description"  cols="20" rows="10"></textarea>
-              <input type="number"
-              id="amount"
-              formControlName="users"
-              placeholder="Number of People"
-              required><br>
-              <select name="schedule" id="schedule" formControlName="schedule">
-                <option value="">Weekly</option>
-                <option value="">Monthly</option>
-              </select>
+              required>
+              </fieldset>
+              
+              <fieldset>
+                <legend>Description</legend>
+                <textarea id="description" formControlName="description"   cols="20" rows="10"></textarea>
+              </fieldset>
+            
+              <fieldset>
+                <legend>Number of People</legend>
+                <input type="number"
+                id="users"
+                formControlName="users"
+                name="users"
+                min="2"
+                required>
+                
+              </fieldset>
+             
+              <fieldset>
+                <legend>Choose Schedule</legend>
+                <select [(ngModel)]="schedule"  id="schedule" >
+                  <option value=""></option>
+                  <option value="">Weekly</option>
+                  <option value="">Monthly</option>
+                </select>
+              </fieldset>
+
+              <fieldset>
+                <legend>Invite via Email <small>(seperate emails with comma)</small></legend>
+                <textarea id="description" formControlName="description"   cols="20" rows="10"></textarea>
+              </fieldset>
+
+              <button [disabled]="createThrift.invalid">Create Thrift</button>
+            
             </form>
         </div>
     </div>

@@ -98,3 +98,7 @@ a{
 .back-btn:hover{
     background: #1b1eeb;
 }
+
+span::content{
+    font-family: 'Montserrat', sans-serif !important;
+}

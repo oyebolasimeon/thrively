@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -13,6 +14,10 @@ import { ThriftBoardComponent } from './dashboard/thrift/thrift-board/thrift-boa
 import { BoardsComponent } from './dashboard/thrift/boards/boards.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CreateThriftComponent } from './dashboard/thrift/create-thrift/create-thrift.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ThriflogsTableComponent } from './dashboard/thrift/thriflogs-table/thriflogs-table.component';
+import { JoinThriftComponent } from './dashboard/thrift/join-thrift/join-thrift.component';
+
 
 @NgModule({
   declarations: [
@@ -26,11 +31,17 @@ import { CreateThriftComponent } from './dashboard/thrift/create-thrift/create-t
     ThriftBoardComponent,
     BoardsComponent,
     ProfileComponent,
-    CreateThriftComponent
+    CreateThriftComponent,
+    ThriflogsTableComponent,
+    JoinThriftComponent
   ],
   imports: [
+  
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
