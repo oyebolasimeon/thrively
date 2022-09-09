@@ -10,7 +10,6 @@
     border: none;
     margin-left: 3vh;
     cursor: pointer;
-    font-family: 'Montserrat', sans-serif !important;
 }
 .back-btn:hover{
     background: #1b1eeb;
@@ -25,7 +24,6 @@
     
     /* background: black; */
 }
-
 form{
     /* display: flex; */
     margin-top: 4vh;
@@ -56,8 +54,8 @@ h3{
 }
 small{
     color: red;
-    text-transform: uppercase;
-    padding-left: 2vh;
+    text-transform: lowercase;
+    padding-left: 5vh;
     font-family: 'Montserrat', sans-serif !important;
     font-size: 12px;
 }

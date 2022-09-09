@@ -1,1 +1,24 @@
-<p>join-thrift works!</p>
+<app-nav-bar></app-nav-bar>
+<section id="jointhrift">
+    <button class="back-btn" (click)="back()" ><i class="fa fa-backward"><span> BACK</span></i></button>
+
+    <div class="container">
+        <div class="thrift-form">
+            <h3>Join Thrift <small>paste thrift id to join</small></h3>
+            <form >
+              <fieldset>
+                <legend>Thrift ID</legend>
+                <input type="text"
+                id="thriftName"
+                formControlName="thriftName"
+                name="thriftname"
+                required>
+              </fieldset>
+
+
+              <button>JOIN</button>
+            
+            </form>
+        </div>
+    </div>
+</section>

@@ -12,4 +12,8 @@ export class JoinThriftComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  back(){
+    history.back();
+  }
+
 }

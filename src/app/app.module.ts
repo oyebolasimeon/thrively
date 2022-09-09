@@ -17,6 +17,8 @@ import { CreateThriftComponent } from './dashboard/thrift/create-thrift/create-t
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ThriflogsTableComponent } from './dashboard/thrift/thriflogs-table/thriflogs-table.component';
 import { JoinThriftComponent } from './dashboard/thrift/join-thrift/join-thrift.component';
+import { CreateThriftsComponent } from './dashboard/thrift/create-thrifts/create-thrifts.component';
+import { ThriftlogsComponent } from './dashboard/thrift/thriftlogs/thriftlogs.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { JoinThriftComponent } from './dashboard/thrift/join-thrift/join-thrift.
     ProfileComponent,
     CreateThriftComponent,
     ThriflogsTableComponent,
-    JoinThriftComponent
+    JoinThriftComponent,
+    CreateThriftsComponent,
+    ThriftlogsComponent
   ],
   imports: [
   

@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+
 @Component({
-  selector: 'app-create-thrift',
-  templateUrl: './create-thrift.component.html',
-  styleUrls: ['./create-thrift.component.css']
+  selector: 'app-create-thrifts',
+  templateUrl: './create-thrifts.component.html',
+  styleUrls: ['./create-thrifts.component.css']
 })
-export class CreateThriftComponent implements OnInit {
+export class CreateThriftsComponent implements OnInit {
 
   schedule: string = "Weekly"
   thriftType : any = "Personal"
-  createThrift!: FormGroup;
+  createThrift: any;
   
-  constructor(private fb: FormBuilder) { 
-    console.log(this.thriftType)
-  }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.createThrift = new FormGroup({
+
+    this.createThrift =this.fb.group({
       thriftName: new FormControl(" ", Validators.required),
       amount: new FormControl(" ", Validators.required),
       description: new FormControl(" ", Validators.required),
@@ -25,12 +25,8 @@ export class CreateThriftComponent implements OnInit {
       emails: new FormControl(" ", Validators.required),
       schedules: new FormControl(" ", Validators.required)
       
-    })
-    
+    });
   }
-
-  
-  
 
   back(){
     history.back();
@@ -41,5 +37,7 @@ export class CreateThriftComponent implements OnInit {
     this.thriftType = e.value;
     console.log(typeof(this.thriftType))
   }
+
+ 
 
 }

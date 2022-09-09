@@ -19,7 +19,7 @@
 
               <fieldset>
                 <legend>Thrift Type</legend>
-                <select [(ngModel)]="thriftType" name="thrifttype" (change)="changeThriftType($event.target)" id="thriftType" >
+                <select  name="thrifttype" (change)="changeThriftType($event.target)" id="thriftType" >
                   <option value="Personal">Personal</option>
                   <option value="Corporate">Corporate</option>
                 </select>
@@ -53,14 +53,14 @@
              
               <fieldset>
                 <legend>Choose Schedule</legend>
-                <select [(ngModel)]="schedule" name="schedule" formControlName="schedules"  id="schedule" >
+                <select  name="schedule" formControlName="schedules"  id="schedule" >
                   
                   <option value="Weekly">Weekly</option>
                   <option value="Monthly">Monthly</option>
                 </select>
               </fieldset>
 
-              <div [hidden]="thriftType == 'personal'" >
+              <div *ngIf="thriftType == 'Corporate'" >
                 <fieldset>
                   <legend> Invite via Email <small>(seperate emails with comma)</small></legend>
                   <textarea id="emails" formControlName="emails" name="email"  cols="20" rows="10"></textarea>

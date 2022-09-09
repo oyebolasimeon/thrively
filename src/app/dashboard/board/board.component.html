@@ -11,7 +11,9 @@
             </div>
             <div class="campaign">
                 <img  *ngIf="loading" style="width: 80%;" (load)="onLoad()" src="/assets/loader.gif" alt="loading" />
+                <a routerLink="/logs">
                 <img *ngIf="!loading" src="./assets/campaign.jpg" alt="" srcset="">
+                </a>
                 <h3 *ngIf="!loading">My Thrift Logs</h3>
             </div>
             <div class="event">
