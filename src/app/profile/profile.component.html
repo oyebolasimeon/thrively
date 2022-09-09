@@ -16,15 +16,15 @@
             <p>Username: <span>Simeon</span> </p>
             <p>Account ID: <span>9A345EW</span> </p>
             <p>Role: <span>General User</span> </p>
-            <p>Account Verification Status: <span style="color: red;"> Not Verified </span></p>
+            <p>Account Verification Status: <span style="color: red"> {{validStatus}} </span></p>
             <p>Account Balance: <span> ₦20000</span> </p>
 
-            <button (click)="verifyAccount()">Verify Account</button> <button style="margin-left: 2vh;">Add Payment Info</button>
+            <button *ngIf=" validStatus != 'Verified'" (click)="verifyAccount()">Verify Account</button> <button style="margin-left: 2vh;">Add Payment Info</button>
         </div>
 
     </div>
 
-    <div class="container" *ngIf="verification">
+    <div class="container" *ngIf="verification ">
         <div class="thrift-form">
             <h3>verify account</h3>
             <form >

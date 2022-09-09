@@ -20,7 +20,8 @@ const routes: Routes = [
   {path: "logs", component: ThriftlogsComponent},
   { path: "myprofile", component: ProfileComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'},
-  {path: '**', redirectTo: '/myboard'}
+  { path: "signup", component: RegisterComponent},
+  {path: '**', redirectTo: '/login'}
 ];
 
 @NgModule({

@@ -9,7 +9,11 @@ export class ProfileComponent implements OnInit {
 
   greet: any;
   verification: boolean = false
-  constructor() { }
+  validated: boolean = false;
+  validStatus: any = localStorage.getItem("validStatus");
+  constructor() {
+    this.validStatus;
+   }
 
   ngOnInit(): void {
     this.greeting();
@@ -46,7 +50,12 @@ export class ProfileComponent implements OnInit {
     return this.verification
   }
 
-  verification(){
+  verified(){
+    localStorage.setItem('accountStatus', 'verified');
+    this.verification = false
+    this.validated = true
+    this.validStatus= localStorage.setItem("validStatus", "Verified")
+    window.location.reload()
     
   }
 
