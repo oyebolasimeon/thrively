@@ -5,6 +5,58 @@
     <button class="back-btn" (click)="back()" ><i class="fa fa-backward"><span> BACK</span></i></button>
     <div class="container">
 
+        <div class="profile-img">
+            <img src="assets/user.jpg" alt="" srcset="">
+            
+        </div>
+
+        <div class="profile-text">
+            <h3>Good {{greeting()}} Simeon </h3>
+
+            <p>Username: <span>Simeon</span> </p>
+            <p>Account ID: <span>9A345EW</span> </p>
+            <p>Role: <span>General User</span> </p>
+            <p>Account Verification Status: <span style="color: red;"> Not Verified </span></p>
+            <p>Account Balance: <span> ₦20000</span> </p>
+
+            <button (click)="verifyAccount()">Verify Account</button> <button style="margin-left: 2vh;">Add Payment Info</button>
+        </div>
+
     </div>
 
+    <div class="container" *ngIf="verification">
+        <div class="thrift-form">
+            <h3>verify account</h3>
+            <form >
+              <fieldset>
+                <legend>Bank Verification number - (BVN)</legend>
+                <input type="number"
+                id="bvn"
+                formControlName="bvn"
+                name="bvn"
+                required>
+              </fieldset>
+
+              <fieldset>
+                <legend>National Identity Number - (NIN)</legend>
+                <input type="number"
+                id="nin"
+                formControlName="nin"
+                name="nin"
+                required>
+              </fieldset>
+
+
+              <button (click)="verified()" style="background-color: green;">JOIN</button>
+            
+            </form>
+        </div>
+    </div>
+
+</section>
+
+<section id="jointhrift">
+    
+
+   
 </section>
