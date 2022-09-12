@@ -19,7 +19,7 @@
             <p>Account Verification Status: <span style="color: red"> {{validStatus}} </span></p>
             <p>Account Balance: <span> ₦20000</span> </p>
 
-            <button *ngIf=" validStatus != 'Verified'" (click)="verifyAccount()">Verify Account</button> <button style="margin-left: 2vh;">Add Payment Info</button>
+            <button *ngIf=" validStatus != 'Verified'" (click)="verifyAccount()">Verify Account</button> <button style="margin-left: 2vh;" (click)="verifyAccountInfo()">Add Payment Info</button>
         </div>
 
     </div>
@@ -40,6 +40,62 @@
               <fieldset>
                 <legend>National Identity Number - (NIN)</legend>
                 <input type="number"
+                id="nin"
+                formControlName="nin"
+                name="nin"
+                required>
+              </fieldset>
+
+
+              <button (click)="verified()" style="background-color: green;">JOIN</button>
+            
+            </form>
+        </div>
+    </div>
+
+    <div class="container" *ngIf="accountVer" >
+        <div class="thrift-form">
+            <h3>Add Payment Information</h3>
+            <form >
+              <fieldset>
+                <legend>Account Number</legend>
+                <input type="number"
+                id="bvn"
+                formControlName="bvn"
+                name="bvn"
+                required>
+              </fieldset>
+
+              <fieldset>
+                <legend>Bank</legend>
+                <input type="text"
+                id="nin"
+                formControlName="nin"
+                name="nin"
+                required>
+              </fieldset>
+
+              <fieldset>
+                <legend>Card Number</legend>
+                <input type="text"
+                id="nin"
+                formControlName="nin"
+                name="nin"
+                required>
+              </fieldset>
+
+              <fieldset>
+                <legend>CVV</legend>
+                <input type="text"
+                id="nin"
+                formControlName="nin"
+                name="nin"
+                required>
+              </fieldset>
+
+              <fieldset>
+                <legend>EXpiry Date</legend>
+                <input type="text"
                 id="nin"
                 formControlName="nin"
                 name="nin"

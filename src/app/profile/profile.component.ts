@@ -9,6 +9,7 @@ export class ProfileComponent implements OnInit {
 
   greet: any;
   verification: boolean = false
+  accountVer: boolean = false;
   validated: boolean = false;
   validStatus: any = localStorage.getItem("validStatus");
   constructor() {
@@ -45,6 +46,16 @@ export class ProfileComponent implements OnInit {
       this.verification = true;
     } else if(this.verification == true) {
       this.verification = false
+    }
+   
+    return this.verification
+  }
+
+  verifyAccountInfo(){
+    if(this.accountVer == false){
+      this.accountVer = true;
+    } else if(this.accountVer == true) {
+      this.accountVer= false
     }
    
     return this.verification
