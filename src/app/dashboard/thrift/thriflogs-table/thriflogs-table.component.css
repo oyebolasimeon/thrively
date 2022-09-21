@@ -11,6 +11,7 @@
 }
 table{
     overflow: scroll;
+    overflow-y: hidden;
     height: 20vh !important;
     
 }
