@@ -21,6 +21,8 @@ import { CreateThriftsComponent } from './dashboard/thrift/create-thrifts/create
 import { ThriftlogsComponent } from './dashboard/thrift/thriftlogs/thriftlogs.component';
 import { NgChartsModule } from 'ng2-charts';
 import { HttpClientModule } from  '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -48,6 +50,12 @@ import { HttpClientModule } from  '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     NgChartsModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'top-right',
+      preventDuplicates: true,
+    }),
+    BrowserAnimationsModule,
     HttpClientModule
   
   ],

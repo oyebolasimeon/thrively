@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/Service/auth.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 
 
@@ -17,7 +18,8 @@ export class SigninComponent implements OnInit {
   responseData: any;
   constructor(
     private route: Router,
-    private service: AuthService
+    private service: AuthService,
+    private notification: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -32,14 +34,18 @@ export class SigninComponent implements OnInit {
     if(this.Login.valid){
       this.service.proceedLogin(this.Login.value).subscribe((res: any) => {
         
-        if(res != null){
+        if(res.status == 200){
           this.responseData = res;
           console.log(this.responseData)
+          this.notification.success("Access Granted")
           this.route.navigate(['/myboard'])
         } else {
           console.log("Response is empty")
+          this.notification.info("Invalid Response")
         }
-      })
+      }), (error: { message: string | undefined; }) => {
+        this.notification.error(error.message)
+      }
     }
 
   }
