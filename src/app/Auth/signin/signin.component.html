@@ -5,13 +5,15 @@
         
         <div class="thrift-form">
             <h3>LOGIN TO Thrively <small>Fill in all required details</small></h3>
-            <form >
+            <form [formGroup]="Login" (ngSubmit)="ProceedLogin()" >
               <fieldset>
                 <legend>Account ID or Username</legend>
-                <input type="text"
-                id="thriftName"
-                formControlName="thriftName"
-                name="thriftname"
+                <input type="email"
+                id="email"
+                formControlName="email"
+                [(ngModel)]="email"
+                autocomplete="off"
+                name="email"
                 required>
               </fieldset>
 
@@ -20,14 +22,18 @@
               <fieldset>
                 <legend>PIN</legend>
                 <input type="text"
-              id="amount"
-              
-              formControlName="amount"
-              name="amount"
+              id="password"
+              [(ngModel)]="password"
+              formControlName="password"
+              name="password"
               required>
               </fieldset>
              
-              <button style="margin-right: 3vh;" (click)="navigateUser()" >LOGIN</button> <button (click)="navigatenewUser()" style="background: transparent; border: 2px solid #4548EA; color: #4548EA; ">New user ?</button>
+              <button 
+                [disabled]="email === '' || password === ''"
+              style="margin-right: 3vh;"
+              type="submit"
+               >LOGIN</button> <button (click)="navigatenewUser()" style="background: transparent; border: 2px solid #4548EA; color: #4548EA; ">New user ?</button>
             
             </form>
         </div>

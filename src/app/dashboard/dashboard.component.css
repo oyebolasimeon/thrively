@@ -1,0 +1,12 @@
+.dt{
+    width: fit-content;
+    margin: auto;
+    height: fit-content;
+    display: flex;
+}
+.dt-table{
+    flex: 1;
+}
+.dt-graph{
+    flex: 1;
+}
