@@ -34,7 +34,7 @@ export class SigninComponent implements OnInit {
     if(this.Login.valid){
       this.service.proceedLogin(this.Login.value).subscribe((res: any) => {
         
-        if(res.status == 200){
+        if(res.status_code === 200){
           this.responseData = res;
           console.log(this.responseData)
           this.notification.success("Access Granted")
