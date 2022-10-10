@@ -32,7 +32,7 @@ form{
     margin: auto;
 }
 input{
-    text-transform: capitalize;
+    text-transform:lowercase;
 }
 input, select{
     width: 100%;

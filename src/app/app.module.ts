@@ -19,6 +19,8 @@ import { ThriflogsTableComponent } from './dashboard/thrift/thriflogs-table/thri
 import { JoinThriftComponent } from './dashboard/thrift/join-thrift/join-thrift.component';
 import { CreateThriftsComponent } from './dashboard/thrift/create-thrifts/create-thrifts.component';
 import { ThriftlogsComponent } from './dashboard/thrift/thriftlogs/thriftlogs.component';
+import { NgChartsModule } from 'ng2-charts';
+import { HttpClientModule } from  '@angular/common/http';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { ThriftlogsComponent } from './dashboard/thrift/thriftlogs/thriftlogs.co
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgChartsModule,
+    HttpClientModule
   
   ],
   providers: [],
