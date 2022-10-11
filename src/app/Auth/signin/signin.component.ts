@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/Service/auth.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import Swal from 'sweetalert2';
 
 
 
@@ -34,14 +35,18 @@ export class SigninComponent implements OnInit {
     if(this.Login.valid){
       this.service.proceedLogin(this.Login.value).subscribe((res: any) => {
         
-        if(res.status_code === 200){
+        if(res.result.length !== 0){
           this.responseData = res;
           console.log(this.responseData)
-          this.notification.success("Access Granted")
+          Swal.fire('Access Granted', 'success')
+          // this.notification.success("Access Granted")
           this.route.navigate(['/myboard'])
         } else {
-          console.log("Response is empty")
-          this.notification.info("Invalid Response")
+          Swal.fire({
+            icon: 'error',
+            title: 'Incorrect Credentials',
+            footer: ''
+          });
         }
       }), (error: { message: string | undefined; }) => {
         this.notification.error(error.message)
