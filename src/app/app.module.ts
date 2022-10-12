@@ -23,6 +23,7 @@ import { NgChartsModule } from 'ng2-charts';
 import { HttpClientModule } from  '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ViewMoreComponent } from './dashboard/thrift/view-more/view-more.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ThriflogsTableComponent,
     JoinThriftComponent,
     CreateThriftsComponent,
-    ThriftlogsComponent
+    ThriftlogsComponent,
+    ViewMoreComponent
   ],
   imports: [
   
