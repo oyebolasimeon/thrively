@@ -4,7 +4,7 @@
 .container{
     display: flex;
     width: 100%;
-    min-height: 40vh;
+    min-height: 90vh;
     margin: auto;
     align-items: center;
     /* background: bisque; */
