@@ -34,6 +34,10 @@ form{
 input{
     text-transform:lowercase;
 }
+legend{
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600;
+}
 input, select{
     width: 100%;
     border: 1px solid #4548EA;

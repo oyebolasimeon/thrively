@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class AuthService {
     "newuser": "/user_onboarding"
   }
 
-  private BASE_URL = "https://stayintouchservices.com/thrivelyapi/Api";
+  private BASE_URL = "https://oyebolasimeon.cloud/thrivelyapi/Api";
   private LOGIN_URL = this.BASE_URL + this.endpoint.login;
 
   
@@ -24,6 +25,13 @@ export class AuthService {
    proceedLogin(userCred: any){
       return this.http.post(this.LOGIN_URL, userCred);
   }
+
+  getCountries(){
+    const link = "https://countriesnow.space/api/v0.1/countries";
+    return this.http.get(link);
+  }
+
+  
   
   createNewUser(data: any){
     return this.http.post(this.BASE_URL+this.endpoint.newuser, data )
