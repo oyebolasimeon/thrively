@@ -97,7 +97,7 @@ export class RegisterComponent implements OnInit {
         Swal.fire({
           position: 'top-end',
           icon: 'success',
-          title: 'OTP Confirmed',
+          title: 'OTP Confirmed, Accout Created Successfully',
           showConfirmButton: false,
           timer: 1500
         })
