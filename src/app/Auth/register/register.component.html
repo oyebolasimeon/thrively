@@ -5,57 +5,72 @@
         
         <div class="thrift-form">
             <h3>SIGNUP TO Thrively <small>Fill in all required details</small></h3>
-            <form >
+            <form [formGroup]="Register" (ngSubmit)="signUp()" >
               <fieldset>
                 <legend>First Name</legend>
                 <input type="text"
-                id="thriftName"
-                formControlName="thriftName"
-                name="thriftname"
+                id="firstname"
+                formControlName="firstname"
+                name="firstname"
                 required>
               </fieldset>
 
               <fieldset>
                 <legend>Last Name</legend>
                 <input type="text"
-                id="thriftName"
-                formControlName="thriftName"
-                name="thriftname"
+                id="lastname"
+                formControlName="lastname"
+                name="lastname"
                 required>
               </fieldset>
 
               <fieldset>
                 <legend>Email</legend>
-                <input type="text"
-                id="thriftName"
-                formControlName="thriftName"
-                name="thriftname"
+                <input type="email"
+                id="email"
+                formControlName="email"
+                name="email"
                 required>
               </fieldset>
 
               <fieldset>
                 <legend>Phone Number</legend>
                 <input type="text"
-                id="thriftName"
-                formControlName="thriftName"
-                name="thriftname"
+                id="phonenumber"
+                formControlName="phonenumber"
+                name="phonenumber"
                 required>
               </fieldset>
 
               <fieldset>
-                <legend>Choose a PIN</legend>
+                <legend>Home Address</legend>
                 <input type="text"
-                id="thriftName"
-                formControlName="thriftName"
-                name="thriftname"
+                id="address"
+                formControlName="address"
+                name="address"
                 required>
               </fieldset>
 
-             
+              <fieldset>
+                <legend>Country</legend>
+                <select name="country"
+                 id="country"
+                 formControlName="country"
+                 required>
+                  <option *ngFor="let countryList of country; let i = index " value={{countryList.country}}> {{countryList.country}}</option>
+                </select>
                
-             
-             
-              <button style="margin-right: 3vh;" (click)="navigateUser()" >Signup</button> <button (click)="navigatenewUser()" style="background: transparent; border: 2px solid #4548EA; color: #4548EA; ">Already a User ?</button>
+              </fieldset>
+
+              <fieldset>
+                <legend>Choose a PIN</legend>
+                <input type="password"
+                id="password"
+                formControlName="password"
+                name="password"
+                required>
+              </fieldset>
+              <button style="margin-right: 3vh;" type="submit" [disabled]="Register.invalid" >Signup</button> <button (click)="navigatenewUser()" style="background: transparent; border: 2px solid #4548EA; color: #4548EA; ">Already a User ?</button>
             
             </form>
         </div>
