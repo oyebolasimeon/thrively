@@ -9,6 +9,7 @@ import { JoinThriftComponent } from './dashboard/thrift/join-thrift/join-thrift.
 import { CreateThriftsComponent } from './dashboard/thrift/create-thrifts/create-thrifts.component';
 import { ThriftlogsComponent } from './dashboard/thrift/thriftlogs/thriftlogs.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ViewMoreComponent } from './dashboard/thrift/view-more/view-more.component';
 
 const routes: Routes = [
   {path: 'login', component: SigninComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: "join-thrift", component: JoinThriftComponent},
   {path: "logs", component: ThriftlogsComponent},
   { path: "myprofile", component: ProfileComponent},
+  { path: "thrift-details/:id", component: ViewMoreComponent },
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: "signup", component: RegisterComponent},
   {path: '**', redirectTo: '/login'}

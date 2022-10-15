@@ -21,6 +21,9 @@ import { CreateThriftsComponent } from './dashboard/thrift/create-thrifts/create
 import { ThriftlogsComponent } from './dashboard/thrift/thriftlogs/thriftlogs.component';
 import { NgChartsModule } from 'ng2-charts';
 import { HttpClientModule } from  '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ViewMoreComponent } from './dashboard/thrift/view-more/view-more.component';
 
 
 @NgModule({
@@ -39,7 +42,8 @@ import { HttpClientModule } from  '@angular/common/http';
     ThriflogsTableComponent,
     JoinThriftComponent,
     CreateThriftsComponent,
-    ThriftlogsComponent
+    ThriftlogsComponent,
+    ViewMoreComponent
   ],
   imports: [
   
@@ -48,6 +52,12 @@ import { HttpClientModule } from  '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     NgChartsModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'top-right',
+      preventDuplicates: true,
+    }),
+    BrowserAnimationsModule,
     HttpClientModule
   
   ],
