@@ -6,61 +6,73 @@
         <div class="thrift-form">
             <h3>SIGNUP TO Thrively <small>Fill in all required details</small></h3>
             <form [formGroup]="Register" (ngSubmit)="signUp()" >
-              <fieldset>
-                <legend>First Name</legend>
-                <input type="text"
-                id="firstname"
-                formControlName="firstname"
-                name="firstname"
-                required>
-              </fieldset>
+              <section id="first" *ngIf="page1">
 
-              <fieldset>
-                <legend>Last Name</legend>
-                <input type="text"
-                id="lastname"
-                formControlName="lastname"
-                name="lastname"
-                required>
-              </fieldset>
+                <fieldset>
+                  <legend>First Name</legend>
+                  <input type="text"
+                  id="firstname"
+                  formControlName="firstname"
+                  name="firstname"
+                  required>
+                </fieldset>
+  
+                <fieldset>
+                  <legend>Last Name</legend>
+                  <input type="text"
+                  id="lastname"
+                  formControlName="lastname"
+                  name="lastname"
+                  required>
+                </fieldset>
+  
+                <fieldset>
+                  <legend>Date Of Birth</legend>
+                  <input type="date"
+                  id="date_of_birth"
+                  formControlName="date_of_birth"
+                  name="date_of_birth"
+                  required>
+                </fieldset>
+                
+              <button style="margin-right: 3vh;" (click)="nextPage(2)" >Next</button> 
+              </section>
+             
+              <section id="second" *ngIf="page2">
 
-              <fieldset>
-                <legend>Date Of Birth</legend>
-                <input type="date"
-                id="date_of_birth"
-                formControlName="date_of_birth"
-                name="date_of_birth"
-                required>
-              </fieldset>
+                <fieldset>
+                  <legend>Email</legend>
+                  <input type="email"
+                  id="email"
+                  formControlName="email"
+                  name="email"
+                  required>
+                </fieldset>
+  
+                <fieldset>
+                  <legend>Phone Number</legend>
+                  <input type="text"
+                  id="phonenumber"
+                  formControlName="phonenumber"
+                  name="phonenumber"
+                  required>
+                </fieldset>
+  
+                <fieldset>
+                  <legend>Home Address</legend>
+                  <input type="text"
+                  id="address"
+                  formControlName="address"
+                  name="address"
+                  required>
+                </fieldset>
+                <button (click)="nextPage(1)" style="background: transparent; border: 2px solid #4548EA; color: #4548EA; ">Previous</button>
+                <button style="margin-left: 3vh;" (click)="nextPage(3)" >Next</button> 
+  
+              </section>
 
-              <fieldset>
-                <legend>Email</legend>
-                <input type="email"
-                id="email"
-                formControlName="email"
-                name="email"
-                required>
-              </fieldset>
-
-              <fieldset>
-                <legend>Phone Number</legend>
-                <input type="text"
-                id="phonenumber"
-                formControlName="phonenumber"
-                name="phonenumber"
-                required>
-              </fieldset>
-
-              <fieldset>
-                <legend>Home Address</legend>
-                <input type="text"
-                id="address"
-                formControlName="address"
-                name="address"
-                required>
-              </fieldset>
-
-              <fieldset>
+              <section id="last" *ngIf="lastPage">
+                 <fieldset>
                 <legend>Country</legend>
                 <select name="country"
                  id="country"
@@ -79,7 +91,12 @@
                 name="password"
                 required>
               </fieldset>
-              <button style="margin-right: 3vh;" type="submit" [disabled]="Register.invalid" >Signup</button> <button (click)="navigatenewUser()" style="background: transparent; border: 2px solid #4548EA; color: #4548EA; ">Already a User ?</button>
+              <button (click)="nextPage(2)" style="background: transparent; border: 2px solid #4548EA; color: #4548EA; ">Previous</button>
+              <button style="margin-left: 3vh;" type="submit" [disabled]="Register.invalid" >Signup</button>
+              <!-- <button (click)="navigatenewUser()" style="background: transparent; border: 2px solid #4548EA; color: #4548EA; ">Already a User ?</button> -->
+
+              </section>
+         
             
             </form>
         </div>
