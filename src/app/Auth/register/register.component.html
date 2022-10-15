@@ -35,7 +35,9 @@
                   required>
                 </fieldset>
                 
-              <button style="margin-right: 3vh;" (click)="nextPage(2)" >Next</button> 
+                <button (click)="navigatenewUser()" style="background: transparent; border: 2px solid #4548EA; color: #4548EA; ">Already a User ?</button>
+              <button style="margin-left: 3vh;" (click)="nextPage(2)" >Next</button> 
+               
               </section>
              
               <section id="second" *ngIf="page2">
