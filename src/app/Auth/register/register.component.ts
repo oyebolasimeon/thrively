@@ -60,8 +60,11 @@ export class RegisterComponent implements OnInit {
       "password": this.loginCred.password
     }
     
+    
     this.Services.proceedLogin(payload).subscribe((res: any) => {
       this.route.navigate(['/myboard'])
+      localStorage.setItem("accountID", res.result[0].account_no);
+    localStorage.setItem("email", res.result[0].email);
     })
   }
 
