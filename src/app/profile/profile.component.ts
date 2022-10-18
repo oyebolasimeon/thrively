@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileService } from './profile.service';
 
 @Component({
   selector: 'app-profile',
@@ -12,12 +13,17 @@ export class ProfileComponent implements OnInit {
   accountVer: boolean = false;
   validated: boolean = false;
   validStatus: any = localStorage.getItem("validStatus");
-  constructor() {
+  accountID = localStorage.getItem("accountID");
+  userData: any;
+
+
+  constructor( private userProfile: ProfileService ) {
     this.validStatus;
    }
 
   ngOnInit(): void {
     this.greeting();
+    this.getUserAccount();
   }
 
   back(){
@@ -68,6 +74,13 @@ export class ProfileComponent implements OnInit {
     this.validStatus= localStorage.setItem("validStatus", "Verified")
     window.location.reload()
     
+  }
+
+  getUserAccount(){
+    let payload = this.accountID
+      this.userProfile.getUserDetails(payload).subscribe((res:any) => {
+        this.userData = res.result[0]
+      })
   }
 
 

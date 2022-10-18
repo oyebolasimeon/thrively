@@ -11,10 +11,10 @@
         </div>
 
         <div class="profile-text">
-            <h3>Good {{greeting()}} Simeon </h3>
+            <h3>Good {{greeting()}} {{userData.firstname}} </h3>
 
-            <p>Username: <span>Simeon</span> </p>
-            <p>Account ID: <span>9A345EW</span> </p>
+            <p>Username: <span>{{userData.firstname}} </span> </p>
+            <p>Account ID: <span>{{userData.account_no}} </span> </p>
             <p>Role: <span>General User</span> </p>
             <p>Account Verification Status: <span style="color: red"> {{validStatus}} </span></p>
             <p>Account Balance: <span> ₦20000</span> </p>
