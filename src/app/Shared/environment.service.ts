@@ -7,5 +7,9 @@ export class EnvironmentService {
 
   constructor() { }
 
-  BASE_URL = "https://oyebolasimeon.cloud/thrivelyapi/Api";
+  // BASE_URL;
+  
+  // private environ(){
+  //  return this.BASE_URL = "https://oyebolasimeon.cloud/thrivelyapi/Api";
+  // }
 }
