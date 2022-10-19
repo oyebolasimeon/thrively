@@ -15,13 +15,17 @@
     background: #1b1eeb;
 }
 
+legend{
+  font-weight: bolder;
+}
+
 .container{
     display: block;
     width: 50%;
     min-height: 50vh;
     margin: auto;
     align-items: center;
-    
+
     /* background: black; */
 }
 form{
@@ -44,6 +48,7 @@ input, select{
     font-weight: 600;
     /* margin-top: 3vh; */
     margin: 0;
+    background-color: rgba(239, 231, 231, 0.186);
 }
 
 h3{
@@ -73,6 +78,7 @@ textarea{
     font-family: 'Montserrat', sans-serif !important;
     font-weight: 600;
     outline: none;
+    background: transparent;
 }
 
 span::content{

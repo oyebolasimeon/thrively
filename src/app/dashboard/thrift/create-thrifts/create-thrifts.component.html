@@ -2,9 +2,9 @@
 
 <section id="new-thrift">
     <button class="back-btn" (click)="back()" ><i class="fa fa-backward"><span> BACK</span></i></button>
-    
+
     <div class="container">
-        
+
         <div class="thrift-form">
             <h3>Create Thrift <small>Fill in all required details</small></h3>
             <form  [formGroup]="createThrift">
@@ -24,7 +24,7 @@
                   <option value="Corporate">Corporate</option>
                 </select>
               </fieldset>
-               
+
               <fieldset>
                 <legend>Contribution Amount (₦)</legend>
                 <input type="number"
@@ -34,12 +34,12 @@
               name="amount"
               required>
               </fieldset>
-              
+
               <fieldset>
                 <legend>Description</legend>
                 <textarea id="description" formControlName="description" name="description"  cols="20" rows="10"></textarea>
               </fieldset>
-            
+
               <fieldset>
                 <legend>Number of People</legend>
                 <input type="number"
@@ -48,13 +48,13 @@
                name="users"
                 min="2"
                 required>
-                
+
               </fieldset>
-             
+
               <fieldset>
                 <legend>Choose Schedule</legend>
                 <select  name="schedule" formControlName="schedules"  id="schedule" >
-                  
+
                   <option value="Weekly">Weekly</option>
                   <option value="Monthly">Monthly</option>
                 </select>
@@ -66,10 +66,10 @@
                   <textarea id="emails" formControlName="emails" name="email"  cols="20" rows="10"></textarea>
                 </fieldset>
               </div>
-              
+
 
               <button [disabled]="createThrift.invalid">Create Thrift</button>
-            
+
             </form>
         </div>
     </div>
