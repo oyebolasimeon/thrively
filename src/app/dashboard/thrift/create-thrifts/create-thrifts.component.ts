@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-create-thrifts',
@@ -11,7 +11,7 @@ export class CreateThriftsComponent implements OnInit {
   schedule: string = "Weekly"
   thriftType : any = "Personal"
   createThrift: any;
-  
+
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
@@ -22,9 +22,9 @@ export class CreateThriftsComponent implements OnInit {
       description: new FormControl(" ", Validators.required),
       users: new FormControl(" ", Validators.required),
       thriftype: new FormControl(" ", Validators.required),
-      emails: new FormControl(" ", Validators.required),
+      emails: new FormControl(" ", [Validators.required, Validators.email]),
       schedules: new FormControl(" ", Validators.required)
-      
+
     });
   }
 
@@ -38,6 +38,6 @@ export class CreateThriftsComponent implements OnInit {
     console.log(typeof(this.thriftType))
   }
 
- 
+
 
 }

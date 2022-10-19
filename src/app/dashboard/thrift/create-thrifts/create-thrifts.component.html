@@ -1,12 +1,12 @@
 <app-nav-bar></app-nav-bar>
 
 <section id="new-thrift">
-    <button class="back-btn" (click)="back()" ><i class="fa fa-backward"><span> BACK</span></i></button>
+    <button class="back-btn" (click)="back()" ><i class="fa fa-backward"></i></button>
 
     <div class="container">
 
         <div class="thrift-form">
-            <h3>Create Thrift <small>Fill in all required details</small></h3>
+            <h3>Create Thrift <br /><span class="small">Fill in all required details</span></h3>
             <form  [formGroup]="createThrift">
               <fieldset>
                 <legend>Thrift Name</legend>
@@ -26,6 +26,16 @@
               </fieldset>
 
               <fieldset>
+                <legend>Number of People</legend>
+                <input type="number"
+                id="users"
+                formControlName="users"
+               name="users"
+                min="2"
+                required>
+              </fieldset>
+
+              <fieldset>
                 <legend>Contribution Amount (₦)</legend>
                 <input type="number"
               id="amount"
@@ -36,28 +46,17 @@
               </fieldset>
 
               <fieldset>
-                <legend>Description</legend>
-                <textarea id="description" formControlName="description" name="description"  cols="20" rows="10"></textarea>
-              </fieldset>
-
-              <fieldset>
-                <legend>Number of People</legend>
-                <input type="number"
-                id="users"
-                formControlName="users"
-               name="users"
-                min="2"
-                required>
-
-              </fieldset>
-
-              <fieldset>
                 <legend>Choose Schedule</legend>
                 <select  name="schedule" formControlName="schedules"  id="schedule" >
 
                   <option value="Weekly">Weekly</option>
                   <option value="Monthly">Monthly</option>
                 </select>
+              </fieldset>
+
+              <fieldset>
+                <legend>Description</legend>
+                <textarea id="description" formControlName="description" name="description"  cols="20" rows="10"></textarea>
               </fieldset>
 
               <div *ngIf="thriftType == 'Corporate'" >
