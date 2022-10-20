@@ -1,4 +1,67 @@
-<p>view-more works!</p>
-<p>
-    {{thriftID}}
-</p>
+<app-nav-bar></app-nav-bar>
+
+<section id="view-details">
+    <button class="back-btn" (click)="back()" ><i class="fa fa-backward"><span> BACK</span></i></button>
+    <div class="container">
+        <div class="details">
+            <h2>thrift name</h2>
+            <div class="items">
+                <div class="name">
+                    Thrift Name
+                 </div>
+                 <div class="name-item">
+                     {{thriftDetails.thrift_name}}
+                  </div>
+            </div>
+
+            <div class="items">
+                <div class="name">
+                    Thrift Type
+                 </div>
+                 <div class="name-item">
+                     {{thriftDetails.thrift_type}}
+                  </div>
+            </div>
+
+            <div class="items">
+                <div class="name">
+                    Description
+                 </div>
+                 <div class="name-item">
+                     {{thriftDetails.description}}
+                  </div>
+            </div>
+
+            <div class="items">
+                <div class="name">
+                    Amount
+                 </div>
+                 <div class="name-item">
+                     {{thriftDetails.contribution}}
+                  </div>
+            </div>
+
+            <div class="items">
+                <div class="name">
+                    Thrift Creator
+                 </div>
+                 <div class="name-item">
+                     {{userDetails.firstname}} {{userDetails.lastname}} ({{userDetails.phone}})
+                  </div>
+            </div>
+
+            <div class="items">
+                <div class="name">
+                    Other Details
+                 </div>
+                 <div class="name-item" style="padding-bottom: 2vh">
+                     Duration | {{thriftDetails.duration}} <br>
+                     Date Created | {{thriftDetails.date_created}} {{thriftDetails.time_created}} <br> 
+                     
+                  </div>
+            </div>
+
+                
+        </div>
+    </div>
+</section>

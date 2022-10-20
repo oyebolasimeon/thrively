@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
   page1: boolean = true;
   page2: boolean = false;
   lastPage: boolean = false;
+  loginCred!: { email: any; password: any; };
   load = false;
 
   constructor(private route: Router, private Services: AuthService) { }
@@ -46,14 +47,29 @@ export class RegisterComponent implements OnInit {
   signUp(){
     if(this.Register.valid){
       const payload = this.Register.getRawValue();
-      console.log(payload)
+      this.loginCred = {...payload}
       this.Services.createNewUser(payload).subscribe((res:any) => {
-        console.log(res)
         this.otp()
       })
     }
 
   }
+
+  autoSignIn(){
+    const payload = {
+      "email": this.loginCred.email,
+      "password": this.loginCred.password
+    }
+    
+    
+    this.Services.proceedLogin(payload).subscribe((res: any) => {
+      this.route.navigate(['/myboard'])
+      localStorage.setItem("accountID", res.result[0].account_no);
+    localStorage.setItem("email", res.result[0].email);
+    })
+  }
+
+
 
   nextPage(page: number){
    if(page == 1){
@@ -96,34 +112,48 @@ export class RegisterComponent implements OnInit {
         autocapitalize: 'off'
       },
       showCancelButton: false,
-      confirmButtonText: 'Submit',
+      confirmButtonText: 'Submit',  
       showLoaderOnConfirm: true,
       preConfirm: (login) => {
         this.load = true;
-        return fetch(`//api.github.com/users/${login}`)
-          .then(response => {
-            if (!response.ok) {
-              throw new Error(response.statusText)
-            }
-            return response.json()
+        const payload:any = {
+          "otpkey": login
+        }
+
+        return this.Services.otpVerification(payload).subscribe((res: any) => {
+          if(res.status ==200){
+             console.log("Confirmed",res.status)
+             Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'OTP Confirmed, Accout Created Successfully',
+              showConfirmButton: false,
+              timer: 1500
+            })
+            this.autoSignIn();
+          } else {
+            this.load = false;
+            Swal.fire({
+              position: 'top-end',
+              icon: 'error',
+              title: res.message,
+              showConfirmButton: false,
+              timer: 1500
+            })
+          }
+        }, (error) => {
+          this.load = false;
+          Swal.fire({
+            position: 'top-end',
+            icon: 'error',
+            title: error,
+            showConfirmButton: false,
+            timer: 1500
           })
-          .catch(error => {
-            Swal.showValidationMessage(
-              `Request failed: ${error}`
-            )
-          })
+        })
+      
       },
       allowOutsideClick: () => !Swal.isLoading()
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: 'OTP Confirmed, Accout Created Successfully',
-          showConfirmButton: false,
-          timer: 1500
-        })
-      }
     })
   }
   
