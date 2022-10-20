@@ -25,6 +25,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ViewMoreComponent } from './dashboard/thrift/view-more/view-more.component';
 import { PreloaderComponent } from './Component/preloader/preloader.component';
+import { NotificationComponent } from './Component/notification/notification.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { PreloaderComponent } from './Component/preloader/preloader.component';
     CreateThriftsComponent,
     ThriftlogsComponent,
     ViewMoreComponent,
-    PreloaderComponent
+    PreloaderComponent,
+    NotificationComponent
   ],
   imports: [
   
