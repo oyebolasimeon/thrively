@@ -17,6 +17,7 @@ export class SigninComponent implements OnInit {
   email = '';
   password = '';
   responseData: any;
+  load = false;
   constructor(
     private route: Router,
     private service: AuthService,
@@ -32,6 +33,7 @@ export class SigninComponent implements OnInit {
   })
 
   ProceedLogin(){
+    this.load = true;
     if(this.Login.valid){
       this.service.proceedLogin(this.Login.value).subscribe((res: any) => {
         
@@ -47,9 +49,11 @@ export class SigninComponent implements OnInit {
             title: 'Incorrect Credentials',
             footer: ''
           });
+          this.load = false;
         }
       }), (error: { message: string | undefined; }) => {
         this.notification.error(error.message)
+        this.load = false;
       }
     }
 

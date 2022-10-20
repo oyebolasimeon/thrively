@@ -16,6 +16,7 @@ export class RegisterComponent implements OnInit {
   page2: boolean = false;
   lastPage: boolean = false;
   loginCred!: { email: any; password: any; };
+  load = false;
 
   constructor(private route: Router, private Services: AuthService) { }
 
@@ -114,6 +115,7 @@ export class RegisterComponent implements OnInit {
       confirmButtonText: 'Submit',  
       showLoaderOnConfirm: true,
       preConfirm: (login) => {
+        this.load = true;
         const payload:any = {
           "otpkey": login
         }
@@ -130,6 +132,7 @@ export class RegisterComponent implements OnInit {
             })
             this.autoSignIn();
           } else {
+            this.load = false;
             Swal.fire({
               position: 'top-end',
               icon: 'error',
@@ -139,6 +142,7 @@ export class RegisterComponent implements OnInit {
             })
           }
         }, (error) => {
+          this.load = false;
           Swal.fire({
             position: 'top-end',
             icon: 'error',
