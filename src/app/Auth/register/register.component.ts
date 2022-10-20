@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
   page1: boolean = true;
   page2: boolean = false;
   lastPage: boolean = false;
+  load = false;
 
   constructor(private route: Router, private Services: AuthService) { }
 
@@ -98,6 +99,7 @@ export class RegisterComponent implements OnInit {
       confirmButtonText: 'Submit',
       showLoaderOnConfirm: true,
       preConfirm: (login) => {
+        this.load = true;
         return fetch(`//api.github.com/users/${login}`)
           .then(response => {
             if (!response.ok) {
