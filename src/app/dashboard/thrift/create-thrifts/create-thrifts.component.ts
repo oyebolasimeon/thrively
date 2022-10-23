@@ -11,6 +11,9 @@ export class CreateThriftsComponent implements OnInit {
   schedule: string = "Weekly"
   thriftType : any = "Personal"
   createThrift: any;
+  page1:boolean = true;
+  page2:boolean = false;
+  lastPage:boolean = false;
 
   constructor(private fb: FormBuilder) { }
 
@@ -38,6 +41,22 @@ export class CreateThriftsComponent implements OnInit {
     console.log(typeof(this.thriftType))
   }
 
+  // switch within pages
+  nextPage(page: number){
+    if(page == 1){
+     this.page1 = true;
+     this.page2 = false;
+     this.lastPage = false;
+    } else if(page == 2){
+     this.page1 = false;
+     this.page2 = true;
+     this.lastPage = false;
+    } else if(page == 3){
+     this.page1 = false;
+     this.page2 = false;
+     this.lastPage = true;
+    }
+   }
 
 
 }
