@@ -1,7 +1,7 @@
 <app-nav-bar></app-nav-bar>
 
 <section id="new-thrift">
-  <button class="back-btn" (click)="back()"><i class="fa fa-backward"></i></button>
+  <button class="back-btn" (click)="back()"><i class="fa fa-backward"> Back</i></button>
 
   <div class="container">
 
@@ -37,7 +37,7 @@
             <input type="number" id="amount" min="2" formControlName="amount" name="amount" required>
           </fieldset>
 
-          <button (click)="nextPage(2)" style="background: transparent; border: 2px solid #4548EA; color: #4548EA; ">Previous</button>
+          <button class="prev" (click)="nextPage(1)">Previous</button>
           <button style="margin-left: 3vh;" (click)="nextPage(3)" >Next</button>
         </section>
 
@@ -55,6 +55,7 @@
             <legend>Description</legend>
             <textarea id="description" formControlName="description" name="description" cols="20" rows="10"></textarea>
           </fieldset>
+          <button class="prev" (click)="nextPage(2)">Previous</button>
 
           <div *ngIf="thriftType == 'Corporate'">
             <fieldset>
