@@ -1,76 +1,73 @@
 <app-nav-bar></app-nav-bar>
 
 <section id="new-thrift">
-    <button class="back-btn" (click)="back()" ><i class="fa fa-backward"></i></button>
+  <button class="back-btn" (click)="back()"><i class="fa fa-backward"> Back</i></button>
 
-    <div class="container">
+  <div class="container">
 
-        <div class="thrift-form">
-            <h3>Create Thrift <br /><span class="small">Fill in all required details</span></h3>
-            <form  [formGroup]="createThrift">
-              <fieldset>
-                <legend>Thrift Name</legend>
-                <input type="text"
-                id="thriftName"
-                formControlName="thriftName"
-                name="thriftname"
-                required>
-              </fieldset>
+    <div class="thrift-form">
+      <h3>Create Thrift <br /><span class="small">Fill in all required details</span></h3>
+      <form [formGroup]="createThrift">
 
-              <fieldset>
-                <legend>Thrift Type</legend>
-                <select  name="thrifttype" (change)="changeThriftType($event.target)" id="thriftType" >
-                  <option value="Personal">Personal</option>
-                  <option value="Corporate">Corporate</option>
-                </select>
-              </fieldset>
-
-              <fieldset>
-                <legend>Number of People</legend>
-                <input type="number"
-                id="users"
-                formControlName="users"
-               name="users"
-                min="2"
-                required>
-              </fieldset>
-
-              <fieldset>
-                <legend>Contribution Amount (₦)</legend>
-                <input type="number"
-              id="amount"
-              min="2"
-              formControlName="amount"
-              name="amount"
-              required>
-              </fieldset>
-
-              <fieldset>
-                <legend>Choose Schedule</legend>
-                <select  name="schedule" formControlName="schedules"  id="schedule" >
-
-                  <option value="Weekly">Weekly</option>
-                  <option value="Monthly">Monthly</option>
-                </select>
-              </fieldset>
-
-              <fieldset>
-                <legend>Description</legend>
-                <textarea id="description" formControlName="description" name="description"  cols="20" rows="10"></textarea>
-              </fieldset>
-
-              <div *ngIf="thriftType == 'Corporate'" >
-                <fieldset>
-                  <legend> Invite via Email <small>(seperate emails with comma)</small></legend>
-                  <textarea id="emails" formControlName="emails" name="email"  cols="20" rows="10"></textarea>
-                </fieldset>
-              </div>
+        <section id="page1" *ngIf="page1">
+          <fieldset>
+            <legend>Thrift Name</legend>
+            <input type="text" id="thriftName" formControlName="thriftName" name="thriftname" required>
+          </fieldset>
 
 
-              <button [disabled]="createThrift.invalid">Create Thrift</button>
+          <fieldset>
+            <legend>Thrift Type</legend>
+            <select name="thrifttype" (change)="changeThriftType($event.target)" id="thriftType">
+              <option value="Personal">Personal</option>
+              <option value="Corporate">Corporate</option>
+            </select>
+          </fieldset>
+          <button style="margin-left: 3vh;" (click)="nextPage(2)" >Next</button>
+        </section>
 
-            </form>
-        </div>
+        <section id="page2" *ngIf="page2">
+          <fieldset>
+            <legend>Number of People</legend>
+            <input type="number" id="users" formControlName="users" name="users" min="2" required>
+          </fieldset>
+
+          <fieldset>
+            <legend>Contribution Amount (₦)</legend>
+            <input type="number" id="amount" min="2" formControlName="amount" name="amount" required>
+          </fieldset>
+
+          <button class="prev" (click)="nextPage(1)">Previous</button>
+          <button style="margin-left: 3vh;" (click)="nextPage(3)" >Next</button>
+        </section>
+
+        <section id="lastPage" *ngIf="lastPage">
+          <fieldset>
+            <legend>Choose Schedule</legend>
+            <select name="schedule" formControlName="schedules" id="schedule">
+
+              <option value="Weekly">Weekly</option>
+              <option value="Monthly">Monthly</option>
+            </select>
+          </fieldset>
+
+          <fieldset>
+            <legend>Description</legend>
+            <textarea id="description" formControlName="description" name="description" cols="20" rows="10"></textarea>
+          </fieldset>
+          <button class="prev" (click)="nextPage(2)">Previous</button>
+
+          <div *ngIf="thriftType == 'Corporate'">
+            <fieldset>
+              <legend> Invite via Email <small>(seperate emails with comma)</small></legend>
+              <textarea id="emails" formControlName="emails" name="email" cols="20" rows="10"></textarea>
+            </fieldset>
+          </div>
+          <button [disabled]="createThrift.invalid">Create Thrift</button>
+        </section>
+
+      </form>
     </div>
+  </div>
 
 </section>
