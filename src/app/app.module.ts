@@ -24,6 +24,7 @@ import { HttpClientModule } from  '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ViewMoreComponent } from './dashboard/thrift/view-more/view-more.component';
+import { ThriftInfoComponent } from './dashboard/thrift/thrift-info/thrift-info.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { ViewMoreComponent } from './dashboard/thrift/view-more/view-more.compon
     JoinThriftComponent,
     CreateThriftsComponent,
     ThriftlogsComponent,
-    ViewMoreComponent
+    ViewMoreComponent,
+    ThriftInfoComponent
   ],
   imports: [
   

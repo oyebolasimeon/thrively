@@ -1,0 +1,45 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container">
+  <div class="main">
+    <aside class="first-section">
+      <div class="header-img">
+        <span class="profile">
+          <img src="../../../../assets/user.jpg" alt="" srcset="">
+        </span>
+      </div>
+      <div class="header-name">
+        <div class="case">
+          <h2>{{thriftDetails.thrift_id}}</h2>
+        </div>
+        <div class="case">
+          <h2>{{thriftDetails.thrift_name}}</h2>
+        </div>
+      </div>
+    </aside>
+    <aside class="second-section">
+        <div class="info-list">
+          <div class="cover">
+            <h2>Description</h2>
+            <p><b>{{thriftDetails.description}}</b></p>
+          </div>
+          <div class="cover">
+            <h2>Amount</h2>
+            <p><b>N{{thriftDetails.contribution}}</b></p>
+          </div>
+          <div class="cover">
+            <h2>Thrift Creator</h2>
+            <p><b>                     {{userDetails.firstname}} {{userDetails.lastname}} ({{userDetails.phone}})</b></p>
+          </div>
+          <div class="cover">
+            <h2>Details</h2>
+            <p><b>
+              Duration : {{thriftDetails.duration}} <br>
+              Date Created : {{thriftDetails.date_created}} : {{thriftDetails.time_created}} <br>
+              Number of People : {{thriftDetails.no_of_people}}
+            </b></p>
+          </div>
+        </div>
+    </aside>
+  </div>
+</div>

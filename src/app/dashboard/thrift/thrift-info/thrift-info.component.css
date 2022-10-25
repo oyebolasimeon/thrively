@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Great+Vibes&family=Montserrat:ital,wght@0,100;0,600;1,200&family=Open+Sans:wght@300&family=PT+Sans+Narrow&family=Poppins:wght@600&family=Rokkitt:wght@200;300&family=Ubuntu:ital,wght@0,300;0,500;1,400&display=swap');
+
+
+.container{
+  display: flex;
+  width: 100vw;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.main{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  width: 100%;
+  /* margin-top: 2rem; */
+}
+
+aside{
+  flex: 1;
+  height: 100%;
+}
+
+.first-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:flex-start;
+}
+
+.profile img{
+  width: 40vh;
+  border: 4px solid #4548EA;
+  border-radius: 100%;
+}
+
+.header-name{
+  margin-top: .5rem;
+  text-align: center;
+}
+
+.case {
+  width: 180px;
+  height: 45px;
+  background-color:#4548EA;
+  color:white;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 0 24px #6980E1;
+
+}
+
+.case h2{
+  margin-top: 0;
+  padding: 8px;
+}
+
+.second-section{
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.info-list{
+  margin-top: 2rem;
+  height: 80%;
+  width: 60%;
+}
+
+.info-list span{
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 auto;
+}
+
+.cover{
+  margin-bottom: 2rem;
+  background-color:#4548EA;
+  box-shadow: 0 0 24px #6980E1;
+  color:white;
+  padding: 5px;
+  border-radius: 10px;
+  width: 100%;
+  height: 28%;
+  /* text-align: center; */
+}
+
+.cover h2,p{
+  margin-left: 2rem;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.cover p{
+  font-size: 14px;
+}

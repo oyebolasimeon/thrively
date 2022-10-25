@@ -4,21 +4,22 @@ import { ProfileService } from 'src/app/profile/profile.service';
 import { AuthService } from 'src/app/Service/auth.service';
 
 @Component({
-  selector: 'app-view-more',
-  templateUrl: './view-more.component.html',
-  styleUrls: ['./view-more.component.css']
+  selector: 'app-thrift-info',
+  templateUrl: './thrift-info.component.html',
+  styleUrls: ['./thrift-info.component.css']
 })
-export class ViewMoreComponent implements OnInit {
+export class ThriftInfoComponent implements OnInit {
 
   thriftID: any;
   thriftDetails: any;
   userDetails: any;
 
-  constructor(private ar: ActivatedRoute, private service: AuthService, private profile: ProfileService) { }
+  constructor( private ar: ActivatedRoute, private service: AuthService, private profile: ProfileService) { }
 
   ngOnInit(): void {
     this.thriftID = this.ar.snapshot.paramMap.get("id")
     this.getThrift();
+    console.log(this.getThrift());
   }
 
   getThrift(){
@@ -27,7 +28,6 @@ export class ViewMoreComponent implements OnInit {
       this.thriftDetails = res.result[0]
       console.log(this.thriftDetails);
       this.getThriftCreator();
-
     })
   }
 
@@ -36,10 +36,6 @@ export class ViewMoreComponent implements OnInit {
     this.profile.getUserDetails(payload).subscribe((data: any) => {
       this.userDetails = data.result[0];
     })
-  }
-
-  back(){
-    history.back()
   }
 
 }
