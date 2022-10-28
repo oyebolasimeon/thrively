@@ -12,14 +12,14 @@
                 <legend>Thrift Name</legend>
                 <input type="text"
                 id="thriftName"
-                formControlName="thriftName"
-                name="thriftname"
+                formControlName="name"
+                name="name"
                 required>
               </fieldset>
 
               <fieldset>
                 <legend>Thrift Type</legend>
-                <select  name="thrifttype" (change)="changeThriftType($event.target)" id="thriftType" >
+                <select formControlName="type" name="type" (change)="changeThriftType($event.target)" id="thriftType" >
                   <option value="Personal">Personal</option>
                   <option value="Corporate">Corporate</option>
                 </select>
@@ -30,8 +30,8 @@
                 <input type="number"
               id="amount"
               min="2"
-              formControlName="amount"
-              name="amount"
+              formControlName="contribution"
+              name="contribution"
               required>
               </fieldset>
               
@@ -40,27 +40,28 @@
                 <textarea id="description" formControlName="description" name="description"  cols="20" rows="10"></textarea>
               </fieldset>
             
-              <fieldset>
+              <fieldset *ngIf="type == 'Corporate'">
                 <legend>Number of People</legend>
                 <input type="number"
                 id="users"
-                formControlName="users"
-               name="users"
+                formControlName="no_of_people"
+               name="no_of_people"
                 min="2"
                 required>
                 
               </fieldset>
              
-              <fieldset>
+              <fieldset >
                 <legend>Choose Schedule</legend>
                 <select  name="schedule" formControlName="schedules"  id="schedule" >
                   
+                  <option value="Daily">Daily</option>
                   <option value="Weekly">Weekly</option>
                   <option value="Monthly">Monthly</option>
                 </select>
               </fieldset>
 
-              <div *ngIf="thriftType == 'Corporate'" >
+              <div *ngIf="type == 'Corporate'" >
                 <fieldset>
                   <legend> Invite via Email <small>(seperate emails with comma)</small></legend>
                   <textarea id="emails" formControlName="emails" name="email"  cols="20" rows="10"></textarea>
