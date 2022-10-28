@@ -9,24 +9,29 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class CreateThriftsComponent implements OnInit {
 
   schedule: string = "Weekly"
-  thriftType : any = "Personal"
-  createThrift: any;
+  type : any = "Personal"
+  // createThrift: any;
+  accountID: any = localStorage.getItem("accountID");
+  email = localStorage.getItem("email")
+  
   
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
-
-    this.createThrift =this.fb.group({
-      thriftName: new FormControl(" ", Validators.required),
-      amount: new FormControl(" ", Validators.required),
-      description: new FormControl(" ", Validators.required),
-      users: new FormControl(" ", Validators.required),
-      thriftype: new FormControl(" ", Validators.required),
-      emails: new FormControl(" ", Validators.required),
-      schedules: new FormControl(" ", Validators.required)
-      
-    });
   }
+
+  createThrift = this.fb.group({
+    name: new FormControl(" ", Validators.required),
+    account_id: this.accountID,
+    contribution: new FormControl(" ", Validators.required),
+    description: new FormControl(" ", Validators.required), 
+    no_of_people: new FormControl(" ", Validators.required),
+    type: new FormControl(" ", Validators.required),
+    email: this.email,
+    schedule: new FormControl(" ", Validators.required),
+    duration: new FormControl(" ", Validators.required)
+    
+  });
 
   back(){
     history.back();
@@ -34,8 +39,8 @@ export class CreateThriftsComponent implements OnInit {
 
   changeThriftType(e: any){
     console.log(e.value)
-    this.thriftType = e.value;
-    console.log(typeof(this.thriftType))
+    this.type = e.value;
+    console.log(typeof(this.type))
   }
 
  
