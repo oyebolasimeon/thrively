@@ -1571,7 +1571,7 @@ nav#sidebar.shrinked a[aria-expanded="true"]::after {
   height: 100%;
   display: block;
   z-index: -1;
-  background: url(../img/bg.jpeg);
+  background: url(/assets/bg-img.png);
   background-size: cover;
   position: absolute;
   top: 0;
@@ -1603,17 +1603,18 @@ nav#sidebar.shrinked a[aria-expanded="true"]::after {
 }
 
 .login-page .form-holder .info {
-  background: rgba(219, 101, 116, 0.95);
-  color: #fff;
+  background: rgba(236, 217, 219, 0.95);
+  color: black;
 }
 
 .login-page .form-holder .info h1 {
-  font-size: 2.5em;
+  font-size: 12vh;
   font-weight: 700;
 }
 
 .login-page .form-holder .info p {
   font-weight: 300;
+  font-family: monospace;
 }
 
 .login-page .form-holder .form {
@@ -1672,6 +1673,14 @@ nav#sidebar.shrinked a[aria-expanded="true"]::after {
     min-height: auto;
     padding: 40px;
     height: 100%;
+  }
+
+  
+}
+
+@media screen and (max-width: 800px) {
+  .info{
+    display: none !important;
   }
 }
 
@@ -2848,7 +2857,7 @@ h6,
 .h5,
 .h6 {
   margin-bottom: 0.5rem;
-  font-family: inherit;
+  font-family:monospace;
   font-weight: 700;
   line-height: 1.2;
   color: inherit;
