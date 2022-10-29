@@ -57,7 +57,7 @@ h3{
 small{
     color: red;
     text-transform: uppercase;
-    padding-left: 2vh;
+    padding-left: vh;
     font-family: 'Montserrat', sans-serif !important;
     font-size: 12px;
 }
