@@ -82,7 +82,7 @@
                        required data-msg="Please enter your password" class="input-material">
 
                       <label for="login-password" class="label-material">Password</label>
-                    </div><button id="login" [disabled]="email === '' || password === ''" class="btn btn-primary">Login</button>
+                    </div><button id="login" [disabled]="email === '' || password === ''" class="btn btn-primary col-lg-12">Login</button>
                     <!-- This should be submit button but I replaced it with <a> for demo purposes-->
                   </form><a href="#" class="forgot-pass">Forgot Password?</a><br><small>Do not have an account? </small><a style="cursor: pointer ;" (click)="navigatenewUser()"class="signup">Signup</a>
                 </div>
