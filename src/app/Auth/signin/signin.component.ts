@@ -41,6 +41,9 @@ export class SigninComponent implements OnInit {
           this.responseData = res;
           localStorage.setItem("accountID", this.responseData.result[0].account_no);
           localStorage.setItem("email", this.responseData.result[0].email);
+          if (this.responseData.result[0].status == 1){
+            localStorage.setItem("role", "General User");
+          }
           Swal.fire('Access Granted', 'success')
           this.route.navigate(['/myboard'])
         } else {

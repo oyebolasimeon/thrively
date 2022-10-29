@@ -26,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ViewMoreComponent } from './dashboard/thrift/view-more/view-more.component';
 import { PreloaderComponent } from './Component/preloader/preloader.component';
 import { NotificationModalComponent } from './Component/notification-modal/notification-modal.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { NotificationModalComponent } from './Component/notification-modal/notif
     ThriftlogsComponent,
     ViewMoreComponent,
     PreloaderComponent,
-    NotificationModalComponent
+    NotificationModalComponent,
+    SideBarComponent
   ],
   imports: [
   
