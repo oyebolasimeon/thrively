@@ -1571,7 +1571,7 @@ nav#sidebar.shrinked a[aria-expanded="true"]::after {
   height: 100%;
   display: block;
   z-index: -1;
-  background: url(/assets/bg-img.png);
+  background: url(/assets/new-bg.gif);
   background-size: cover;
   position: absolute;
   top: 0;
