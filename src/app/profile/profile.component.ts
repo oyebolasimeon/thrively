@@ -15,8 +15,8 @@ export class ProfileComponent implements OnInit {
   validStatus: any = localStorage.getItem("validStatus");
   accountID = localStorage.getItem("accountID");
   userData: any;
-
-
+  role = localStorage.getItem("role")
+email = localStorage.getItem("email")
   constructor( private userProfile: ProfileService ) {
     this.validStatus;
    }
