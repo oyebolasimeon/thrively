@@ -40,7 +40,6 @@ import { SideBarComponent } from './side-bar/side-bar.component';
     ThriftTableComponent,
     ThriftBoardComponent,
     BoardsComponent,
-    ProfileComponent,
     CreateThriftComponent,
     ThriflogsTableComponent,
     JoinThriftComponent,
