@@ -23,6 +23,10 @@ export class AuthService {
     
    }
 
+   isLoggedIn(){
+    return localStorage.getItem("email") != null;
+   }
+
    proceedLogin(userCred: any){
       return this.http.post(this.LOGIN_URL, userCred);
   }
