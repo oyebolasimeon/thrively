@@ -1,8 +1,13 @@
 <section class="dashboard">
     <app-nav-bar></app-nav-bar>
     <div class="d-flex align-items-stretch" style="min-height: 70vh;">
-<app-side-bar></app-side-bar>
+<app-side-bar class="animate__animated animate__slideInLeft"></app-side-bar>
 <div class="page-content">
+    <div class="page-header animate__animated animate__jackInTheBox animate__delay-1s" *ngIf="barVisible">
+        <div class="container-fluid">
+          <h2 class="h5 no-margin-bottom"><i (click)="removeBar()" class="animate__animated animate__bounceIn animate__faster animate__infinite" style="color: green;" class="fa fa-remove"></i> Good {{greet}} {{userName}} </h2>
+        </div>
+      </div>
     <router-outlet></router-outlet>
 </div>
     </div>
