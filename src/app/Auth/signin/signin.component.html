@@ -64,7 +64,6 @@
                   <!-- Form Section -->
                   <form [formGroup]="Login" (ngSubmit)="ProceedLogin()" class="form-validate">
                     <div class="form-group">
-                      <span class="mt-2">User Name</span>
                       <input id="login-username" type="email"
                       id="email"
                       formControlName="email"
@@ -72,10 +71,9 @@
                       autocomplete="off"
                       name="email" 
                       required data-msg="Please enter your username" class="input-material">
-                   
+                      <label for="login-username" class="label-material">User Name</label>
                     </div>
                     <div class="form-group">
-                      <span class="mt-2">Password</span>
                       <input id="login-password"  type="password"
                       id="password"
                       [(ngModel)]="password"
@@ -83,7 +81,7 @@
                       name="password"
                        required data-msg="Please enter your password" class="input-material">
 
-                       
+                      <label for="login-password" class="label-material">Password</label>
                     </div><button id="login" [disabled]="email === '' || password === ''" class="btn btn-primary col-lg-12">Login</button>
                     <!-- This should be submit button but I replaced it with <a> for demo purposes-->
                   </form><a href="#" class="forgot-pass">Forgot Password?</a><br><small>Do not have an account? </small><a style="cursor: pointer ;" (click)="navigatenewUser()"class="signup">Signup</a>
