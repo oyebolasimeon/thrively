@@ -140,3 +140,24 @@
     right: 0;
     padding: inherit;
   }
+
+  .card-box{
+    width: 80%; 
+    border-radius: 25px 25px; 
+    min-height: 34vh; 
+    background-image: url("/assets/card.jpg");
+     background-size:cover;
+  }
+
+  @media screen and (max-width: 699px) {
+   
+
+   .card-box{
+    width: 100% !important; 
+   }
+
+   .card-text{
+    font-size: 17px !important;
+   }
+
+}
