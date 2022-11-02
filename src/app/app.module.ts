@@ -18,7 +18,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ThriflogsTableComponent } from './dashboard/thrift/thriflogs-table/thriflogs-table.component';
 import { JoinThriftComponent } from './dashboard/thrift/join-thrift/join-thrift.component';
 import { CreateThriftsComponent } from './dashboard/thrift/create-thrifts/create-thrifts.component';
-import { ThriftlogsComponent } from './dashboard/thrift/thriftlogs/thriftlogs.component';
 import { NgChartsModule } from 'ng2-charts';
 import { HttpClientModule } from  '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
@@ -44,7 +43,6 @@ import { SideBarComponent } from './side-bar/side-bar.component';
     ThriflogsTableComponent,
     JoinThriftComponent,
     CreateThriftsComponent,
-    ThriftlogsComponent,
     ViewMoreComponent,
     PreloaderComponent,
     NotificationModalComponent,
