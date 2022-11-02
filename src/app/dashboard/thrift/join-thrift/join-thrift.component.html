@@ -1,24 +1,94 @@
-<app-nav-bar></app-nav-bar>
+
 <section id="jointhrift">
-    <button class="back-btn" (click)="back()" ><i class="fa fa-backward"><span> BACK</span></i></button>
 
-    <div class="container">
-        <div class="thrift-form">
-            <h3>Join Thrift <small>paste thrift id to join</small></h3>
-            <form >
-              <fieldset>
-                <legend>Thrift ID</legend>
-                <input type="text"
-                id="thriftName"
-                formControlName="thriftName"
-                name="thriftname"
-                required>
-              </fieldset>
-
-
-              <button>JOIN</button>
-            
-            </form>
+  <!-- <section class="no-padding-top">
+    <div class="container-fluid">
+      <div class="row">  -->
+  <div id="joinThrift" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
+    <div role="document" class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header"><strong id="exampleModalLabel" class="modal-title">JOIN A THRIFT</strong>
+          <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
         </div>
+        <div class="modal-body">
+          <p>To join a thrift Paste the thrift Invitation code below. Inserting an Invalid Invitation code will definetly not work. <br>Do well to read the thrift terms and conditions before joining any thrift.</p>
+          
+          <!-- Form Section to join thrift -->
+
+          <section class="no-padding-top">
+            <div class="container-fluid">
+              <div class="row">
+
+                <div class="col-lg-12">                           
+                  <div class="block">
+                    <!-- <div class="title"><strong>Inline Form</strong></div> -->
+                    <div class="block-body">
+                      <form [formGroup]="joinThrift" (ngSubmit)="getThrift()" class="form-inline">
+                        <div class="form-group">
+                          <label for="inlineFormInput" class="sr-only">Name</label>
+                          <input id="inlineFormInput"
+                          formControlName="thrift_id"
+                          name="thrift_id" 
+                           type="text" placeholder="Paste Thrift Code" class="mr-sm-3 form-control">
+                        </div>
+                        <!-- ISA24495 -->
+                        <div class="form-group">
+                          <input type="submit" *ngIf="!finalJoin" [disabled]="joinThrift.invalid" value="Proceed" class="btn btn-primary">
+                          <input type="submit" *ngIf="finalJoin" (click)="joinThrifts()" value="Confirm" class="btn btn-primary">
+                        </div>
+                        <span  *ngIf="!finalJoin" style="color: red; font-size: 12px;"> {{thriftDetails}} </span>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+                </section>
+
+                <!-- Thrift Details -->
+                
+                <section *ngIf="finalJoin"  class="no-padding-bottom">
+                  <p >Description:  <span class="p-2 "  style="word-wrap: break-word; border-radius: 5px 5px; background-color: rgb(20, 171, 20); color: #fff;">This thrift is meant for Playing only.</span></p>
+                <p>Amount: N4000 per Person</p>
+                <p>Duration: 6 weeks</p>
+                <p>Date Created: 4th October, 2022</p>
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-lg-12">                                           
+                        <div class="messages-block block">
+                         
+                          <div class="title"><strong>Participants</strong></div>
+                          <div class="messages">
+                          <a href="#" class="message d-flex align-items-center">
+                              <div class="profile">
+                                <img src="https://media-exp1.licdn.com/dms/image/C4E03AQHgzfcjFo3eyQ/profile-displayphoto-shrink_800_800/0/1644682269672?e=2147483647&v=beta&t=xUgsq-jK2MMzf70KdiD1BDYZJlI0PoV7JSd6xsUIQq0" alt="..." class="img-fluid">
+                                  <div class="status online"></div>
+                              </div>
+                              <div class="content">   <strong class="d-block">Oyebola Simeon</strong><span class="d-block">Owner - +2349017820944</span><small class="date d-block">joined: 7:00am</small></div></a><a href="#" class="message d-flex align-items-center">
+                             
+                                <div class="profile"><img src="https://media-exp1.licdn.com/dms/image/C4E03AQHB55XnfInCpw/profile-displayphoto-shrink_200_200/0/1657114300885?e=2147483647&v=beta&t=Yro5vV8kLG2oOza99nsl80rSSjr-BM0Vh82YVc6Yruc" alt="..." class="img-fluid">
+                                <div class="status away"></div>
+                              </div>
+                              <div class="content">   <strong class="d-block">Faniyi Nurudeen</strong><span class="d-block">+2349018937482</span><small class="date d-block">Joined: 7:40am</small></div></a><a href="#" class="message d-flex align-items-center">
+                              <div class="profile"><img src="https://ncsogun.org.ng/wp-content/uploads/2020/01/Adesina-Sodiya-696x497.jpeg" alt="..." class="img-fluid">
+                                <div class="status busy"></div>
+                              </div>
+                              <div class="content">   <strong class="d-block">Adesina Sodiya</strong><span class="d-block">+2349017820988</span><small class="date d-block">joined: 9:30am</small></div></a><a href="#" class="message d-flex align-items-center">
+                              </a>
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                    </div>
+                  </section>
+        </div>
+        <div class="modal-footer">
+            <small style="color: red;">Thrively will not be held liable to loss of funds due to user carelessness or negligence.</small>
+        </div>
+      </div>
     </div>
+  </div>
+<!-- </div>
+</div>
+</section> -->
 </section>
