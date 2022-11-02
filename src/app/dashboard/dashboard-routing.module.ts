@@ -5,6 +5,7 @@ import { ProfileComponent } from '../profile/profile.component';
 import { AuthguardGuard } from '../Shared/authguard.guard';
 import { BoardComponent } from './board/board.component';
 import { DashboardComponent } from './dashboard.component';
+import { JoinThriftComponent } from './thrift/join-thrift/join-thrift.component';
 import { ThriftlogsComponent } from './thrift/thriftlogs/thriftlogs.component';
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
       {path: 'home', component: BoardComponent, canActivate: [AuthguardGuard]},
       {path: 'payment-details', component: PaymentCardComponent, canActivate: [AuthguardGuard]},
       {path: 'txns', component: ThriftlogsComponent, canActivate: [AuthguardGuard]},
+      {path: 'join-thrift', component: JoinThriftComponent, canActivate: [AuthguardGuard]},
       {path: 'myprofile', component: ProfileComponent, canActivate: [AuthguardGuard]},
     { path: '', redirectTo: 'home', pathMatch: 'full'},
   ]}

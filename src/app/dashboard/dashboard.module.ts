@@ -11,7 +11,8 @@ import { ThriftInnerDetailsComponent } from './thrift/thriftlogs/thrift-inner-de
 
 
 @NgModule({
-  declarations: [ProfileComponent, PaymentCardComponent, ThriftlogsComponent, InnerDetailsComponent, ThriftInnerDetailsComponent],
+  declarations: [ProfileComponent, PaymentCardComponent, ThriftlogsComponent, InnerDetailsComponent,
+     ThriftInnerDetailsComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

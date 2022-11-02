@@ -12,7 +12,6 @@ import { BoardComponent } from './dashboard/board/board.component';
 import { ThriftTableComponent } from './dashboard/thrift/thrift-table/thrift-table.component';
 import { ThriftBoardComponent } from './dashboard/thrift/thrift-board/thrift-board.component';
 import { BoardsComponent } from './dashboard/thrift/boards/boards.component';
-import { ProfileComponent } from './profile/profile.component';
 import { CreateThriftComponent } from './dashboard/thrift/create-thrift/create-thrift.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ThriflogsTableComponent } from './dashboard/thrift/thriflogs-table/thriflogs-table.component';

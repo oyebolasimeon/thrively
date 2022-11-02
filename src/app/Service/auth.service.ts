@@ -10,7 +10,8 @@ export class AuthService {
   endpoint = {
     "login": "/user_login",
     "newuser": "/user_onboarding",
-    "verify": "/email_verification"
+    "verify": "/email_verification",
+    "join": "/join_thrift"
   }
 
   private BASE_URL = "https://oyebolasimeon.cloud/thrivelyapi/Api";
@@ -36,7 +37,9 @@ export class AuthService {
     return this.http.get(link);
   }
 
-  
+  joinThrift(id:any){
+    return this.http.post(this.BASE_URL+this.endpoint.join, id )
+  }
   
   createNewUser(data: any){
     return this.http.post(this.BASE_URL+this.endpoint.newuser, data )
