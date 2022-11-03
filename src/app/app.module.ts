@@ -25,6 +25,7 @@ import { ViewMoreComponent } from './dashboard/thrift/view-more/view-more.compon
 import { PreloaderComponent } from './Component/preloader/preloader.component';
 import { NotificationModalComponent } from './Component/notification-modal/notification-modal.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { ThriftAnnounceModalComponent } from './Component/Annoucement/thrift-announce-modal/thrift-announce-modal.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { SideBarComponent } from './side-bar/side-bar.component';
     ViewMoreComponent,
     PreloaderComponent,
     NotificationModalComponent,
-    SideBarComponent
+    SideBarComponent,
+    ThriftAnnounceModalComponent
   ],
   imports: [
   
