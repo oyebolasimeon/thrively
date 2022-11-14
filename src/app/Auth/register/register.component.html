@@ -120,7 +120,7 @@
                   <div class="logo">
                     <h1>THRIVELY</h1>
                   </div>
-                  <p>Not Your Regular Alajo Somolu... Digitalizing Thrifting </p>
+                  <p style="text-transform: capitalize;">adashi... esusu... ajo... <br> contribute, be empowered & thrive </p>
                 </div>
               </div>
             </div>
@@ -133,6 +133,7 @@
 
                     <section id="first" *ngIf="page1">
                     <div class="form-group">
+                      <span class="mt-2">First Name</span>
                       <input id="login-username" type="text"
                       id="firstname"
                       formControlName="firstname"
@@ -141,9 +142,10 @@
                       name="firstname" 
                       required data-msg="Please enter your first name" class="input-material">
                       <!-- <label for="login-username" class="label-material">First Name</label> -->
-                      <span class="mt-2">First Name</span>
+                      
                     </div>
                     <div class="form-group">
+                      <span class="mt-2">Last Name</span>
                       <input id="login-lastname"  type="text"
                       id="login-username"
                       formControlName="lastname"
@@ -151,10 +153,11 @@
                        required data-msg="Please enter your lastname" class="input-material">
 
                       <!-- <label for="login-lastname" class="label-material">Last Name</label> -->
-                      <span class="mt-2">Last Name</span>
+                     
                     </div>
 
                     <div class="form-group">
+                      <span class="mt-2">Date Of Birth</span>
                       <input id="date" type="date"
                       
                       formControlName="date_of_birth"
@@ -162,7 +165,7 @@
                       autocomplete="off"
                       required data-msg="Please enter your date of birth" class="input-material">
                       <!-- <label for="login-username" class="label-material">Date Of Birth</label> -->
-                      <span class="mt-2">Date Of Birth</span>
+                      
                     </div>
                     <button id="login"  (click)="nextPage(2)" class="btn btn-primary ml-2 col-lg-7">Next</button>
                     </section>
@@ -170,17 +173,19 @@
                     <section id="second" *ngIf="page2">
 
                       <div class="form-group">
+                        <span class="mt-2">Email Address</span>
                         <input id="login-lastname"  type="email"
                         
                         formControlName="email"
                         name="email"
                          required data-msg="Enter a valid email" class="input-material">
                         
-                         <span class="mt-2">Email Address</span>
+                         
                         <!-- <label for="login-password" class="label-material">Last Name</label> -->
                       </div>
 
                       <div class="form-group">
+                        <span class="mt-2">Phone Number</span>
                         <input id="login-phone"  type="text"
                         
                         formControlName="phonenumber"
@@ -188,16 +193,17 @@
                          required data-msg="Please enter your phonenumber" class="input-material" placeholder="Phone Number"/>
   
                         <!-- <label for="login-username" class="label-material">Phone Number</label> -->
-                        <span class="mt-2">Phone Number</span>
+                        
                       </div>
   
                       <div class="form-group">
+                        <span class="mt-2">Home Address</span>
                         <input id="login-address"type="text"
                         id="address"
                         formControlName="address"
                         name="address"
                          required data-msg="Please enter your home address" class="input-material" placeholder="Home Address">
-                         <span class="mt-2">Home Address</span>
+                         
                         <!-- <label for="login-password" class="label-material">Home Address</label> -->
                       </div>
 
@@ -214,7 +220,7 @@
                           name="country"
                            required data-msg="Enter a valid email" placeholder="Country" class="input-material">
                            -->
-
+                           <span class="mt-2">Select Your Country</span>
                            <select name="country"
                  id="country"
                  formControlName="country"
@@ -222,11 +228,12 @@
                  required>
                   <option style="  background: rgba(236, 217, 219, 0.95) ; color: black; font-family: monospace;"  *ngFor="let countryList of country; let i = index " value={{countryList.country}}> {{countryList.country}}</option>
                 </select>
-                           <span class="mt-2">Select Your Country</span>
+                           
                           <!-- <label for="login-password" class="label-material">Last Name</label> -->
                         </div>
   
                         <div class="form-group">
+                          <span class="mt-2">Choose A Pin</span>
                           <input id="login-username"  type="text"
                           
                           formControlName="password"
@@ -234,7 +241,7 @@
                            required data-msg="Choose a pin" class="input-material" placeholder="Choose a Pin"/>
     
                           <!-- <label for="login-username" class="label-material">Phone Number</label> -->
-                          <span class="mt-2">Choose A Pin</span>
+                          
                         </div>
     
                         
