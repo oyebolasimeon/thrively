@@ -1,3 +1,4 @@
+import { ThriftMainBoardComponent } from './thrift-main-board/thrift-main-board.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PaymentCardComponent } from '../Payment/payment-card/payment-card.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
       {path: 'home', component: BoardComponent, canActivate: [AuthguardGuard]},
       {path: 'payment-details', component: PaymentCardComponent, canActivate: [AuthguardGuard]},
       {path: 'txns', component: ThriftlogsComponent, canActivate: [AuthguardGuard]},
+      {path: 'thrift-board', component: ThriftMainBoardComponent, canActivate: [AuthguardGuard]},
       {path: 'join-thrift', component: JoinThriftComponent, canActivate: [AuthguardGuard]},
       {path: 'myprofile', component: ProfileComponent, canActivate: [AuthguardGuard]},
     { path: '', redirectTo: 'home', pathMatch: 'full'},

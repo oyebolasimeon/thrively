@@ -8,11 +8,13 @@ import { PaymentCardComponent } from '../Payment/payment-card/payment-card.compo
 import { ThriftlogsComponent } from './thrift/thriftlogs/thriftlogs.component';
 import { InnerDetailsComponent } from './thrift/thrift-table/inner-details/inner-details.component';
 import { ThriftInnerDetailsComponent } from './thrift/thriftlogs/thrift-inner-details/thrift-inner-details.component';
+import { ThriftMainBoardComponent } from './thrift-main-board/thrift-main-board.component';
 
 
 @NgModule({
   declarations: [ProfileComponent, PaymentCardComponent, ThriftlogsComponent, InnerDetailsComponent,
-     ThriftInnerDetailsComponent],
+     ThriftInnerDetailsComponent,
+     ThriftMainBoardComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
