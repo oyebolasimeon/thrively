@@ -10,6 +10,7 @@ import { JoinThriftComponent } from './thrift/join-thrift/join-thrift.component'
 import { ThriftlogsComponent } from './thrift/thriftlogs/thriftlogs.component';
 import { PersonalThriftComponent } from './thrift-main-board/personal-thrift/personal-thrift.component';
 import { DomesticThriftComponent } from './thrift-main-board/domestic-thrift/domestic-thrift.component';
+import { TransferFundsInternallyComponent } from '../Payment/transfer-funds-internally/transfer-funds-internally.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,7 @@ const routes: Routes = [
       {path: 'payment-details', component: PaymentCardComponent, canActivate: [AuthguardGuard]},
       {path: 'txns', component: ThriftlogsComponent, canActivate: [AuthguardGuard]},
       {path: 'thrift-board', component: ThriftMainBoardComponent, canActivate: [AuthguardGuard]},
+      {path: 'transfer-funds', component: TransferFundsInternallyComponent, canActivate: [AuthguardGuard]},
       {path: 'domestic', component: DomesticThriftComponent, canActivate: [AuthguardGuard]},
       {path: 'personal', component: PersonalThriftComponent, canActivate: [AuthguardGuard]},
       {path: 'join-thrift', component: JoinThriftComponent, canActivate: [AuthguardGuard]},
