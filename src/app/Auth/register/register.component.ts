@@ -25,21 +25,21 @@ export class RegisterComponent implements OnInit {
   }
 
   Register = new FormGroup({
-    firstname: new FormControl(" ", Validators.required),
-    lastname: new FormControl(" ", Validators.required),
-    phonenumber: new FormControl(" ", Validators.required),
+    firstname: new FormControl("", Validators.required),
+    lastname: new FormControl("", Validators.required),
+    phonenumber: new FormControl("", Validators.required),
     email: new FormControl(" ", Validators.email),
     othername: new FormControl(""),
     mothername: new FormControl(""),
     gender: new FormControl(""),
-    date_of_birth: new FormControl(" ", Validators.required),
+    date_of_birth: new FormControl("", Validators.required),
     zipcode: new FormControl(""),
     city: new FormControl(""),
     state: new FormControl(""),
     user_image: new FormControl(""),
-    address: new FormControl(" ", Validators.required),
-    country: new FormControl(" ", Validators.required),
-    password: new FormControl(" ", Validators.required)
+    address: new FormControl("", Validators.required),
+    country: new FormControl("", Validators.required),
+    password: new FormControl("", Validators.required)
 
   })
 
