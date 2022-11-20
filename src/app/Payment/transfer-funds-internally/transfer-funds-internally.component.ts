@@ -20,9 +20,9 @@ export class TransferFundsInternallyComponent implements OnInit {
   }
 
   transferData = new FormGroup({
-    recieverAccountId: new FormControl(" ", Validators.required),
+    recieverAccountId: new FormControl("", Validators.required),
     // recieverName: new FormControl(" ", Validators.required),
-    amount: new FormControl(" ", Validators.required)
+    amount: new FormControl("", Validators.required)
 
   })
 
