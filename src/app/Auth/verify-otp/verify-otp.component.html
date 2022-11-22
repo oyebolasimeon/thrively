@@ -1,0 +1,90 @@
+<app-preloader *ngIf="load"></app-preloader>
+
+<section *ngIf="!load" id="new-thrift">
+
+    
+    <!-- <div class="container">
+        
+        <div class="thrift-form">
+            <h3>LOGIN TO Thrively <small>Fill in all required details</small></h3>
+            <form [formGroup]="Login" (ngSubmit)="ProceedLogin()" >
+              <fieldset>
+                <legend>Account ID or Username</legend>
+                <input type="email"
+                id="email"
+                formControlName="email"
+                [(ngModel)]="email"
+                autocomplete="off"
+                name="email"
+                required>
+              </fieldset>
+
+             
+               
+              <fieldset>
+                <legend>PIN</legend>
+                <input type="password"
+              id="password"
+              [(ngModel)]="password"
+              formControlName="password"
+              name="password"
+              required>
+              </fieldset>
+             
+              <button 
+                [disabled]="email === '' || password === ''"
+              style="margin-right: 3vh;"
+              type="submit"
+               >LOGIN</button> <button (click)="navigatenewUser()" style="background: transparent; border: 2px solid #4548EA; color: #4548EA; ">New user ?</button>
+            
+            </form>
+        </div>
+    </div> -->
+
+
+      <div class="login-page">
+      <div class="container d-flex align-items-center">
+        <div class="form-holder has-shadow">
+          <div class="row">
+            <!-- Logo & Information Panel-->
+            <div class="col-lg-6">
+              <div class="info d-flex align-items-center">
+                <div class="content">
+                  <div class="logo">
+                    <h1>THRIVELY</h1>
+                  </div>
+                  <p style="text-transform: capitalize;">adashi... esusu... ajo... <br> contribute, be empowered & thrive </p>
+                </div>
+              </div>
+            </div>
+            <!-- Form Panel    -->
+            <div class="col-lg-6 bg-white">
+              <div class="form d-flex align-items-center">
+                <div class="content">
+                  <!-- Form Section -->
+                  <form [formGroup]="Verify" (ngSubmit)="ProceedOtp()" class="form-validate">
+                    <div class="form-group">
+                      <span class="mt-2">Paste OTP Here </span>
+                      <input id="login-otp" type="text"
+                    
+                      formControlName="otpkey"
+                      [(ngModel)]="otpkey"
+                      autocomplete="off"
+                      name="otp" 
+                      required data-msg="Please enter your username" class="input-material">
+                   
+                    </div>
+                    <button id="login" [disabled]="otpkey === ''" class="btn btn-primary col-lg-12">Verify</button>
+                    <!-- This should be submit button but I replaced it with <a> for demo purposes-->
+                  </form>
+                  <!-- <a href="#" class="forgot-pass">Forgot Password?</a><br><small>Do not have an account? </small><a style="cursor: pointer ;" (click)="navigatenewUser()"class="signup">Signup</a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+
+</section>

@@ -9,9 +9,11 @@ import { JoinThriftComponent } from './dashboard/thrift/join-thrift/join-thrift.
 import { CreateThriftsComponent } from './dashboard/thrift/create-thrifts/create-thrifts.component';
 import { ThriftlogsComponent } from './dashboard/thrift/thriftlogs/thriftlogs.component';
 import { ViewMoreComponent } from './dashboard/thrift/view-more/view-more.component';
+import { VerifyOtpComponent } from './Auth/verify-otp/verify-otp.component';
 
 const routes: Routes = [
   {path: 'login', component: SigninComponent},
+  {path: 'verifyme', component: VerifyOtpComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'myboard', loadChildren: () => import('./dashboard/dashboard.module').then((s) => s.DashboardModule)},
   {path: "thrift", component: ThriftBoardComponent},

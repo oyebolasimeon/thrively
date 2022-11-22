@@ -27,6 +27,7 @@ import { NotificationModalComponent } from './Component/notification-modal/notif
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { ThriftAnnounceModalComponent } from './Component/Annoucement/thrift-announce-modal/thrift-announce-modal.component';
 import { TransferFundsInternallyComponent } from './Payment/transfer-funds-internally/transfer-funds-internally.component';
+import { VerifyOtpComponent } from './Auth/verify-otp/verify-otp.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { TransferFundsInternallyComponent } from './Payment/transfer-funds-inter
     NotificationModalComponent,
     SideBarComponent,
     ThriftAnnounceModalComponent,
-    TransferFundsInternallyComponent
+    TransferFundsInternallyComponent,
+    VerifyOtpComponent
   ],
   imports: [
   
