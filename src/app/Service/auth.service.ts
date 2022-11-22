@@ -11,7 +11,7 @@ export class AuthService {
     "login": "/user_login",
     "newuser": "/user_onboarding",
     "verify": "/email_verification",
-    "join": "/join_thrift"
+    "join": "/join_thrift",
   }
 
   private BASE_URL = "https://oyebolasimeon.cloud/thrivelyapi/Api";

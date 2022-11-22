@@ -11,7 +11,7 @@ export class ProfileService {
   constructor( private http: HttpClient ) { }
 
   getUserDetails(id: any){
-    return this.http.get(`${this.BASE_URL}/fetch_user_details?user_id=${id}`)
+    return this.http.get(`${this.BASE_URL}/fetch_user_details?userAccountNumber=${id}`)
   }
 
   
