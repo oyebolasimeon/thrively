@@ -14,4 +14,8 @@ export class ThriftService {
 
   private BASE_URL = "https://oyebolasimeon.cloud/thrivelyapi/Api";
   constructor(private http: HttpClient) { }
+
+  personalThrift(data: any){
+    return this.http.post(this.BASE_URL+this.endpoint.personal, data)
+  }
 }

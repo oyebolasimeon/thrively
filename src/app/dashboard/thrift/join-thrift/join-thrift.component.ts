@@ -24,7 +24,7 @@ export class JoinThriftComponent implements OnInit {
 
   joinThrift = new FormGroup({
     // account_id: this.accountID,
-    thrift_id: new FormControl(" ", Validators.required)
+    thrift_id: new FormControl("", Validators.required)
   })
 
   back(){

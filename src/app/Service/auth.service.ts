@@ -50,7 +50,7 @@ export class AuthService {
   }
 
   getThriftByID(id:any){
-    return this.http.get(`${this.BASE_URL}/fetch_thrift_details?thrift_id=${id}`)
+    return this.http.get(`${this.BASE_URL}/fetch_thrift_details?thriftID=${id}`)
   }
 
 

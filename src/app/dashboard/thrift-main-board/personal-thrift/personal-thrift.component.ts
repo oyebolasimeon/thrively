@@ -1,5 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ThriftService } from '../../thrift/thrift.service';
 
 @Component({
   selector: 'app-personal-thrift',
@@ -13,28 +15,29 @@ export class PersonalThriftComponent implements OnInit {
   accountID: any = localStorage.getItem("accountID");
 
 
-  constructor() { }
+  constructor(private thriftService: ThriftService) { }
 
   ngOnInit(): void {
   }
 
   createThrift = new FormGroup({
-    thriftName: new FormControl(" ", Validators.required),
-    description: new FormControl(" ", Validators.required),
-    amount: new FormControl(" ", Validators.required),
-    // email: this.email,
-    // accountID: this.accountID,
-    startDate: new FormControl(" ", Validators.required),
-    duration: new FormControl(" ", Validators.required)
+    // thriftName: new FormControl("", Validators.required),
+    description: new FormControl("", Validators.required),
+    amount: new FormControl("", Validators.required),
+    startDate: new FormControl("", Validators.required),
+    duration: new FormControl("", Validators.required)
   })
 
   submitThrift(){
     if(this.createThrift.valid){
       const payload = this.createThrift.getRawValue();
       payload.email = this.email;
-      payload.accountID = this.accountID
+      payload.userAccountNumber = this.accountID
 
-      // console.log(payload)
+     this.thriftService.personalThrift(payload).subscribe((res:any) => {
+      console.log(res)
+     })
+
     }
   }
 

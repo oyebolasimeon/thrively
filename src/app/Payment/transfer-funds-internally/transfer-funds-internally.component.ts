@@ -32,11 +32,9 @@ export class TransferFundsInternallyComponent implements OnInit {
           if(res.status==200){
             this.labelFlag = true;
             this.userData = res.result[0]
-          console.log(this.userData)
           } else if(res.status == 204){
             this.labelFlag = false;
             this.errorMes = res?.message;
-          console.log("hgfxd",this.userData)
           }
           
         })
