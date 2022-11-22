@@ -33,12 +33,21 @@ export class VerifyOtpComponent implements OnInit {
     if(this.Verify.valid){
       this.service.otpVerification(this.Verify.value).subscribe((res: any) => {
         console.log(res)
-        if(res.result.length !== 0){
+        if(res.status == 200){
           this.responseData = res;
          
           Swal.fire('OTP Verified', 'success')
           this.route.navigate(['/login'])
-        } else {
+        } 
+        else if(res.status == 204){
+          Swal.fire({
+            icon: 'warning',
+            title: 'OTP Expired or Used',
+            footer: ''
+          });
+          this.route.navigate(['/login'])
+        } 
+        else {
           Swal.fire({
             icon: 'error',
             title: 'Invalid OTP',
