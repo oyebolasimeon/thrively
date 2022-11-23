@@ -55,6 +55,21 @@
                       <div class="line"></div>
 
                       <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">Atttainable Amount</label>
+                        <div class="col-sm-9">
+                          <input type="text" 
+                          class="form-control" 
+                          formControlName="attainableAmount"
+                          id="attainableAmount"
+                          name="attainableAmount"
+                          placeholder="Total Amount You are Aiming" 
+                          autocomplete="off" 
+                          required>
+                        </div>
+                      </div>
+                      <div class="line"></div>
+
+                      <div class="form-group row">
                         <label class="col-sm-3 form-control-label">Start Date</label>
                         <div class="col-sm-9">
                           <input type="date" 
@@ -73,9 +88,9 @@
                         <label class="col-sm-3 form-control-label">Number of Participant</label>
                         <div class="col-sm-9">
                           <select 
-                          formControlName="numberOfPeople"
-                          id="numberOfPeople"
-                          name="numberOfPeople" 
+                          formControlName="noOfPeople"
+                          id="noOfPeople"
+                          name="noOfPeople" 
                           class="form-control mb-3 mb-3"
                           required>
                             <option value="1" >1</option>
@@ -109,7 +124,7 @@
                       <div class="form-group row">
                         <div class="col-sm-9 ml-auto">
                          
-                          <button type="submit" [disabled]="createThrift.valid" class="btn btn-primary">Create Domestic Thrift</button>
+                          <button type="submit" [disabled]="createThrift.invalid" class="btn btn-primary">Create Domestic Thrift</button>
                         </div>
                       </div>
                     </form>
@@ -120,3 +135,7 @@
         </div>
     </section>
 </section>
+
+<app-thriftlogs
+[thriftType]="thriftComponentType"
+></app-thriftlogs>

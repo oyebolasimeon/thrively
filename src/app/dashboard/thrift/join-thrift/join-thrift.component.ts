@@ -50,6 +50,7 @@ export class JoinThriftComponent implements OnInit {
         this.thriftType = res?.result[0].thriftType;
  
         this.thriftDetails = res;
+        console.log(this.thriftDetails)
       }
       this.getThriftCreator(this.thriftDetails.result[0].userAccountNo);
       

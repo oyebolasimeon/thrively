@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class ThriftService {
   endpoint = {
     "personal": "/createPersonalThrift",
-    "fetch": "/user_onboarding", 
+    "domestic": "/createDomesticThrift", 
     "verify": "/email_verification",
     "join": "/join_thrift",
   }
@@ -17,6 +17,10 @@ export class ThriftService {
 
   personalThrift(data: any){
     return this.http.post(this.BASE_URL+this.endpoint.personal, data)
+  }
+
+  domesticThrift(data:any){
+    return this.http.post(this.BASE_URL+this.endpoint.domestic, data)
   }
 
   fetchAllThrift(accNo: any){
