@@ -1,3 +1,4 @@
+import { ProfileService } from 'src/app/profile/profile.service';
 import { ThriftService } from './../../thrift.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/Service/auth.service';
@@ -11,12 +12,11 @@ export class ThriftInnerDetailsComponent implements OnInit {
   
   @Input() itemClicked: any;
   thriftResponse: any;
-  constructor(private thriftService: AuthService ) { }
+  userDetails: any;
+  constructor(private thriftService: AuthService, private userService: ProfileService ) { }
 
   ngOnInit(): void {
    this.fetchSingleThrift();
-    
-    
   }
 
 
@@ -25,7 +25,19 @@ export class ThriftInnerDetailsComponent implements OnInit {
   
     this.thriftService.getThriftByID(payload).subscribe((res: any) =>{
       this.thriftResponse = res.result[0]
+      this.getThriftCreator(res.result[0]?.userAccountNo)
       console.log(this.thriftResponse)
+    })
+  }
+
+
+    getThriftCreator(id: any){
+    let payload = id;
+    this.userService.getUserDetails(payload).subscribe((data: any) => {
+      this.userDetails = data.result[0].firstname + ' ' + data.result[0].lastname;
+      console.log(this.userDetails)
+      // return this.userDetails;
+      
     })
   }
 

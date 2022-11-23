@@ -1,15 +1,19 @@
-<div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
-    <div role="document" class=" modal-lg modal-dialog modal-dialog-centered ">
+<div id="moreThriftDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
+    <div role="document" class=" modal-md modal-dialog modal-dialog-centered ">
       <div class="modal-content">
-        <div class="modal-header"><strong id="exampleModalLabel" class="modal-title">Notification Title</strong>
+        <div class="modal-header"><strong id="exampleModalLabel" class="modal-title"> {{thriftResponse?.thriftName}} </strong>
           <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
         </div>
-        <div class="modal-body">
-          <p>Lorem ipsum dolor sit amet consectetur.</p>
+        <div class="modal-body" style="text-transform: capitalize; font-size: 18px;">
+          <p>Description: {{thriftResponse?.description}}</p>
+          <p>Duration: {{thriftResponse?.duration}}</p>
+          <p>Attainable Amount: N{{thriftResponse?.attainableAmount}}</p>
+          <p>Start Date: {{thriftResponse?.startDate}} </p>
+          <p>Thrift Creator: {{userDetails}}</p>
        
         </div>
         <div class="modal-footer">
-            <p>Time</p>
+            <p>Date & Time Created: {{thriftResponse?.datecreated}} | {{thriftResponse?.timeCreated}} </p>
         </div>
       </div>
     </div>
