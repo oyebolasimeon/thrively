@@ -42,6 +42,9 @@ export class PersonalThriftComponent implements OnInit {
         title: 'Personal Thrift Created',
         footer: `${res.result}`
       });
+
+      console.clear()
+      this.createThrift.reset();
    
      })
 
