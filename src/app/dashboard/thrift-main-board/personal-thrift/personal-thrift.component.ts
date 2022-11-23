@@ -23,7 +23,8 @@ export class PersonalThriftComponent implements OnInit {
   }
 
   createThrift = new FormGroup({
-    // thriftName: new FormControl("", Validators.required),
+    thriftName: new FormControl("", Validators.required),
+    attainableAmount: new FormControl("", Validators.required),
     description: new FormControl("", Validators.required),
     amount: new FormControl("", Validators.required),
     startDate: new FormControl("", Validators.required),
