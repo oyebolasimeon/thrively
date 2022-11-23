@@ -15,6 +15,8 @@ export class ThriftlogsComponent implements OnInit {
   name: any;
   p: number = 1;
   userDetails: any;
+  clickedItem: any;
+  
 
   accNumber = localStorage.getItem("accountID");
   thriftlog : any;
@@ -26,12 +28,24 @@ export class ThriftlogsComponent implements OnInit {
 
   public fetchAllThrift(): any{
     const payload = this.accNumber;
+    if (this.thriftType == 'Domestic Thrift'){
+      this.thriftType = "domesticThrift"
+    }
+    else if(this.thriftType == 'Personal Thrift'){
+      this.thriftType = "personalThrift"
+    }
     let log;
     this.thriftService.fetchAllThrift(payload).subscribe((res:any) =>{
-      this.thriftlog = res.result
-      console.log("Logs  ",this.thriftlog)
-      // return this.thriftlog;
+      this.thriftlog = res.result.sort().reverse();
+      // console.log("Logs  ",this.thriftlog)
+   
     })
+  }
+
+  getClickedItem(id: any){
+    this.clickedItem = id;
+    document.getElementById("modal")?.click()
+   
   }
 
   // getThriftCreator(id: any){

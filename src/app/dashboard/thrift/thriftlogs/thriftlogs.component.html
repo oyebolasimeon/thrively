@@ -39,7 +39,7 @@
             </td>
             <td> {{record.amount}} </td>
             <td>
-              <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-secondary btn-sm btn-rounded">
+              <button (click)="getClickedItem(record?.thriftID)"  class="btn btn-secondary btn-sm btn-rounded">
                 View More
               </button>
             </td>
@@ -50,6 +50,8 @@
 </section>
 
 <!-- Component to show more details for a thrif transaction -->
-
-<app-thrift-inner-details></app-thrift-inner-details>
-<pagination-controls style="color: #fff !important;" (pageChange)="p = $event"></pagination-controls>
+<button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-secondary btn-sm btn-rounded " id="modal" hidden></button>
+<app-thrift-inner-details *ngIf="clickedItem"
+[itemClicked]="clickedItem"
+></app-thrift-inner-details>
+<pagination-controls  (pageChange)="p = $event"></pagination-controls>
