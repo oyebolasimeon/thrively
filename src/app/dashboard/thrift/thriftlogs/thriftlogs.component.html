@@ -15,7 +15,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let record of thriftlog?.result | paginate: { itemsPerPage: 3, currentPage: p }; let i = index">
+          <tr *ngFor="let record of thriftlog | paginate: { itemsPerPage: 3, currentPage: p }; let i = index;">
             <td>
               <div class="d-flex align-items-center">
                 <img
@@ -25,93 +25,26 @@
                     class="rounded-circle"
                     />
                 <div class="ml-3">
-                  <p class="fw-bold mb-1"> {{record[i]?.thriftName}} </p>
-                  <p class="text-muted mb-0">thrift@ncs.org.ng</p>
+                  <p class="fw-bold mb-1"> {{record?.thriftName}} </p>
+                  <p class="text-muted mb-0">{{record?.duration}}</p>
                 </div>
               </div>
             </td>
             <td>
-              <p class="fw-normal mb-1">{{record[i]?.email}}</p>
-              <p class="text-muted mb-0">Cooperative Department</p>
+              <p class="fw-normal mb-1">{{record?.email}}</p>
+              <!-- <p class="text-muted mb-0"> {{getThriftCreator(record?.userAccountNo)}} </p> -->
             </td>
             <td>
               <span class="badge badge-success rounded-pill d-inline">Running</span>
             </td>
-            <td>4000</td>
+            <td> {{record.amount}} </td>
             <td>
               <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-secondary btn-sm btn-rounded">
                 View More
               </button>
             </td>
           </tr>
-          <!-- <tr>
-            <td>
-              <div class="d-flex align-items-center">
-                <img
-                    src="https://mdbootstrap.com/img/new/avatars/6.jpg"
-                    class="rounded-circle"
-                    alt=""
-                    style="width: 45px; height: 45px"
-                    />
-                <div class="ms-3">
-                  <p class="fw-bold mb-1">Alex Ray</p>
-                  <p class="text-muted mb-0">alex.ray@gmail.com</p>
-                </div>
-              </div>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Consultant</p>
-              <p class="text-muted mb-0">Finance</p>
-            </td>
-            <td>
-              <span class="badge badge-primary rounded-pill d-inline"
-                    >Onboarding</span
-                >
-            </td>
-            <td>Junior</td>
-            <td>
-              <button
-                      type="button"
-                      class="btn btn-link btn-rounded btn-sm fw-bold"
-                      data-mdb-ripple-color="dark"
-                      >
-                Edit
-              </button>
-            </td>
-          </tr> -->
-          <!-- <tr>
-            <td>
-              <div class="d-flex align-items-center">
-                <img
-                    src="https://mdbootstrap.com/img/new/avatars/7.jpg"
-                    class="rounded-circle"
-                    alt=""
-                    style="width: 45px; height: 45px"
-                    />
-                <div class="ms-3">
-                  <p class="fw-bold mb-1">Kate Hunington</p>
-                  <p class="text-muted mb-0">kate.hunington@gmail.com</p>
-                </div>
-              </div>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Designer</p>
-              <p class="text-muted mb-0">UI/UX</p>
-            </td>
-            <td>
-              <span class="badge badge-warning rounded-pill d-inline">Awaiting</span>
-            </td>
-            <td>Senior</td>
-            <td>
-              <button
-                      type="button"
-                      class="btn btn-link btn-rounded btn-sm fw-bold"
-                      data-mdb-ripple-color="dark"
-                      >
-                Edit
-              </button>
-            </td>
-          </tr> -->
+
         </tbody>
       </table>
 </section>
