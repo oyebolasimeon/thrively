@@ -53,5 +53,6 @@
 <button type="button" data-toggle="modal" data-target="#moreThriftDetails" class="btn btn-secondary btn-sm btn-rounded " id="modal" hidden></button>
 <app-thrift-inner-details *ngIf="clickedItem"
 [itemClicked]="clickedItem"
+
 ></app-thrift-inner-details>
 <pagination-controls  (pageChange)="p = $event"></pagination-controls>

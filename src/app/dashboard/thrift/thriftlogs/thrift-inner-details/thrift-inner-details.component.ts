@@ -1,6 +1,6 @@
 import { ProfileService } from 'src/app/profile/profile.service';
 import { ThriftService } from './../../thrift.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ComponentRef, ElementRef, EventEmitter, HostListener, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { AuthService } from 'src/app/Service/auth.service';
 
 @Component({
@@ -8,16 +8,31 @@ import { AuthService } from 'src/app/Service/auth.service';
   templateUrl: './thrift-inner-details.component.html',
   styleUrls: ['./thrift-inner-details.component.css']
 })
-export class ThriftInnerDetailsComponent implements OnInit {
+export class ThriftInnerDetailsComponent implements OnChanges {
   
   @Input() itemClicked: any;
+  @Output() close = new EventEmitter();
+  componentRef!: ComponentRef <ThriftInnerDetailsComponent>;
+  
   thriftResponse: any;
   userDetails: any;
-  constructor(private thriftService: AuthService, private userService: ProfileService ) { }
+  constructor(private thriftService: AuthService, private userService: ProfileService, private host: ElementRef<HTMLElement> ) { }
 
-  ngOnInit(): void {
-   this.fetchSingleThrift();
+  ngOnChanges(changes: SimpleChanges): void {
+    this.fetchSingleThrift();
   }
+
+  killComponent() {    
+}
+
+  onClose() {
+    this.close.emit(null);
+  }
+
+  // @HostListener('unloaded')
+  // ngOnDestroy() {
+  //   console.log('Items destroyed');
+  // }
 
 
   fetchSingleThrift(){
@@ -40,5 +55,7 @@ export class ThriftInnerDetailsComponent implements OnInit {
       
     })
   }
+
+  
 
 }

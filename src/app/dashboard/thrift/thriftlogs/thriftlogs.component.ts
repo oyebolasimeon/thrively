@@ -17,6 +17,7 @@ export class ThriftlogsComponent implements OnInit {
   userDetails: any;
   clickedItem: any;
   thriftTypes: any;
+  showModal:boolean = true;
 
   accNumber = localStorage.getItem("accountID");
   thriftlog : any;
@@ -51,7 +52,7 @@ export class ThriftlogsComponent implements OnInit {
     this.clickedItem = id;
     console.log("1",this.clickedItem);
     
-    document.getElementById("modal")?.click()
+    // document.getElementById("moreThriftDetails")?.click()
    
   }
 
