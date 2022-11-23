@@ -25,3 +25,15 @@
     
     /* background: black; */
 }
+
+
+
+.ngx-pagination a{
+    cursor: pointer;
+    color: #fff !important;
+}
+
+.ngx-pagination button{
+    cursor: pointer;
+    color: #fff !important;
+}

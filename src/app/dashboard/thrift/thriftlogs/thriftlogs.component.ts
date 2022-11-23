@@ -11,6 +11,7 @@ export class ThriftlogsComponent implements OnInit {
 
   // @Output() thriftType = new EventEmitter<any>();
   @Input() thriftType: any;
+  p: number = 1;
 
   accNumber = localStorage.getItem("accountID");
   thriftlog: any;

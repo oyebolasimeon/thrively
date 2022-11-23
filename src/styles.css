@@ -6,3 +6,29 @@
   }
 
  
+  .ngx-pagination a{
+    cursor: pointer;
+    color: #fff !important;
+}
+
+.ngx-pagination button{
+    cursor: pointer;
+    color: #fff !important;
+}
+
+
+.ngx-pagination a:hover{
+  cursor: pointer;
+  background-color: #EA5F70 !important;
+}
+
+.ngx-pagination button{
+  cursor: pointer;
+  color: #EA5F70 !important;
+
+}
+
+.ngx-pagination .current{
+  cursor: pointer;
+  background-color: #EA5F70 !important;
+}

@@ -1,3 +1,4 @@
+import { NgxPaginationModule } from 'ngx-pagination';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -22,6 +23,7 @@ import { DomesticThriftComponent } from './thrift-main-board/domestic-thrift/dom
   imports: [
     CommonModule,
     DashboardRoutingModule,
+    NgxPaginationModule,
     ReactiveFormsModule,
     FormsModule
   ]

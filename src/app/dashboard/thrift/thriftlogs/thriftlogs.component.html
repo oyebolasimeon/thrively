@@ -15,7 +15,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr *ngFor="let record of thriftlog | paginate: { itemsPerPage: 3, currentPage: p }; let i = index">
             <td>
               <div class="d-flex align-items-center">
                 <img
@@ -119,3 +119,4 @@
 <!-- Component to show more details for a thrif transaction -->
 
 <app-thrift-inner-details></app-thrift-inner-details>
+<pagination-controls class=" al" style="color: #fff !important;" (pageChange)="p = $event"></pagination-controls>
