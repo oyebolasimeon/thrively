@@ -1,3 +1,4 @@
+import { ProfileService } from './../../../profile/profile.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/Service/auth.service';
@@ -13,11 +14,12 @@ export class JoinThriftComponent implements OnInit {
   thriftDetails: any;
   profile: any;
   userDetails: any;
+  thriftType: any;
   finalJoin = false;
   accountID: any = localStorage.getItem("accountID");
   thriftPayload: any;
 
-  constructor(private services: AuthService) { }
+  constructor(private services: AuthService, private profileServices: ProfileService) { }
 
   ngOnInit(): void {
   }
@@ -41,20 +43,24 @@ export class JoinThriftComponent implements OnInit {
       this.thriftDetails = res.result[0]
       this.finalJoin = true;
       if(res.status == 204){
-        this.thriftDetails = res.message
+        this.thriftDetails = res
         this.finalJoin = false;
       } else  if(res.status == 200){
         // this.joinThrifts(result)
+        this.thriftType = res?.result[0].thriftType;
+ 
+        this.thriftDetails = res;
       }
-      this.getThriftCreator(this.thriftDetails.account_id);
+      this.getThriftCreator(this.thriftDetails.result[0].userAccountNo);
       
     })
   }
 
   getThriftCreator(id: any){
     let payload = id;
-    this.profile.getUserDetails(payload).subscribe((data: any) => {
+    this.profileServices.getUserDetails(payload).subscribe((data: any) => {
       this.userDetails = data.result[0];
+      
     })
   }
 

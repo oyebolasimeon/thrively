@@ -29,14 +29,27 @@
                           <input id="inlineFormInput"
                           formControlName="thrift_id"
                           name="thrift_id" 
-                           type="text" placeholder="Paste Thrift Code" class="mr-sm-3 form-control">
+                           type="text"
+                           *ngIf="!finalJoin" 
+                           placeholder="Paste Thrift Code" class="mr-sm-3 form-control">
+
+                           <input id="inlineFormInput"
+                          formControlName="thrift_id"
+                          name="thrift_id" 
+                           type="text"
+                           readonly 
+                           *ngIf="finalJoin"
+                           placeholder="Paste Thrift Code" class="mr-sm-3 form-control">
                         </div>
                         <!-- ISA24495 -->
                         <div class="form-group">
                           <input type="submit" *ngIf="!finalJoin" [disabled]="joinThrift.invalid" value="Proceed" class="btn btn-primary">
-                          <input type="submit" *ngIf="finalJoin" (click)="joinThrifts()" value="Confirm" class="btn btn-primary">
+                          <div *ngIf="thriftType != 'personalThrift'">
+                            <input type="submit" *ngIf="finalJoin" (click)="joinThrifts()" value="Confirm" class="btn btn-primary">
+                          </div>
+                         
                         </div>
-                        <span  *ngIf="!finalJoin" style="color: red; font-size: 12px;"> {{thriftDetails}} </span>
+                        <span  *ngIf="finalJoin" style="color: red; font-size: 12px;"> {{thriftDetails?.message}} </span>
                       </form>
                     </div>
                   </div>
@@ -48,38 +61,46 @@
                 <!-- Thrift Details -->
                 
                 <section *ngIf="finalJoin"  class="no-padding-bottom">
-                  <p >Description:  <span class="p-2 "  style="word-wrap: break-word; border-radius: 5px 5px; background-color: rgb(20, 171, 20); color: #fff;">This thrift is meant for Playing only.</span></p>
-                <p>Amount: N4000 per Person</p>
-                <p>Duration: 6 weeks</p>
-                <p>Date Created: 4th October, 2022</p>
-                  <div class="container-fluid">
-                    <div class="row">
-                      <div class="col-lg-12">                                           
-                        <div class="messages-block block">
-                         
-                          <div class="title"><strong>Participants</strong></div>
-                          <div class="messages">
-                          <a href="#" class="message d-flex align-items-center">
-                              <div class="profile">
-                                <img src="https://media-exp1.licdn.com/dms/image/C4E03AQHgzfcjFo3eyQ/profile-displayphoto-shrink_800_800/0/1644682269672?e=2147483647&v=beta&t=xUgsq-jK2MMzf70KdiD1BDYZJlI0PoV7JSd6xsUIQq0" alt="..." class="img-fluid">
-                                  <div class="status online"></div>
-                              </div>
-                              <div class="content">   <strong class="d-block">Oyebola Simeon</strong><span class="d-block">Owner - +2349017820944</span><small class="date d-block">joined: 7:00am</small></div></a><a href="#" class="message d-flex align-items-center">
+                  <section *ngIf="thriftType == 'domesticThrift'">
+                    <p >Description:  <span class="p-2 "  style="word-wrap: break-word; border-radius: 5px 5px; background-color: rgb(20, 171, 20); color: #fff;"> {{thriftDetails?.description}} </span></p>
+                    <p>Amount: N4000 per Person</p>
+                    <p>Duration: 6 weeks</p>
+                    <p>Date Created: 4th October, 2022</p>
+                      <div class="container-fluid">
+                        <div class="row">
+                          <div class="col-lg-12">                                           
+                            <div class="messages-block block">
                              
-                                <div class="profile"><img src="https://media-exp1.licdn.com/dms/image/C4E03AQHB55XnfInCpw/profile-displayphoto-shrink_200_200/0/1657114300885?e=2147483647&v=beta&t=Yro5vV8kLG2oOza99nsl80rSSjr-BM0Vh82YVc6Yruc" alt="..." class="img-fluid">
-                                <div class="status away"></div>
-                              </div>
-                              <div class="content">   <strong class="d-block">Faniyi Nurudeen</strong><span class="d-block">+2349018937482</span><small class="date d-block">Joined: 7:40am</small></div></a><a href="#" class="message d-flex align-items-center">
-                              <div class="profile"><img src="https://ncsogun.org.ng/wp-content/uploads/2020/01/Adesina-Sodiya-696x497.jpeg" alt="..." class="img-fluid">
-                                <div class="status busy"></div>
-                              </div>
-                              <div class="content">   <strong class="d-block">Adesina Sodiya</strong><span class="d-block">+2349017820988</span><small class="date d-block">joined: 9:30am</small></div></a><a href="#" class="message d-flex align-items-center">
-                              </a>
+                              <div class="title"><strong>Participants</strong></div>
+                              <div class="messages">
+                              <a href="#" class="message d-flex align-items-center">
+                                  <div class="profile">
+                                    <img src="https://media-exp1.licdn.com/dms/image/C4E03AQHgzfcjFo3eyQ/profile-displayphoto-shrink_800_800/0/1644682269672?e=2147483647&v=beta&t=xUgsq-jK2MMzf70KdiD1BDYZJlI0PoV7JSd6xsUIQq0" alt="..." class="img-fluid">
+                                      <div class="status online"></div>
+                                  </div>
+                                  <div class="content">   <strong class="d-block">Oyebola Simeon</strong><span class="d-block">Owner - +2349017820944</span><small class="date d-block">joined: 7:00am</small></div></a><a href="#" class="message d-flex align-items-center">
+                                 
+                                    <div class="profile"><img src="https://media-exp1.licdn.com/dms/image/C4E03AQHB55XnfInCpw/profile-displayphoto-shrink_200_200/0/1657114300885?e=2147483647&v=beta&t=Yro5vV8kLG2oOza99nsl80rSSjr-BM0Vh82YVc6Yruc" alt="..." class="img-fluid">
+                                    <div class="status away"></div>
+                                  </div>
+                                  <div class="content">   <strong class="d-block">Faniyi Nurudeen</strong><span class="d-block">+2349018937482</span><small class="date d-block">Joined: 7:40am</small></div></a><a href="#" class="message d-flex align-items-center">
+                                  <div class="profile"><img src="https://ncsogun.org.ng/wp-content/uploads/2020/01/Adesina-Sodiya-696x497.jpeg" alt="..." class="img-fluid">
+                                    <div class="status busy"></div>
+                                  </div>
+                                  <div class="content">   <strong class="d-block">Adesina Sodiya</strong><span class="d-block">+2349017820988</span><small class="date d-block">joined: 9:30am</small></div></a><a href="#" class="message d-flex align-items-center">
+                                  </a>
+                            </div>
+                          </div>
+                          </div>
                         </div>
-                      </div>
-                      </div>
-                    </div>
-                    </div>
+                        </div>
+                  </section>
+
+                  <section *ngIf="thriftType == 'personalThrift'">
+                    <p >Type Of Thrift:  <span class="p-2 "  style="word-wrap: break-word; border-radius: 5px 5px; background-color: rgb(20, 171, 20); color: #fff;">  Personal Thrift  </span></p>
+                    <p >Info:  <span class="p-2 "  style="word-wrap: break-word; border-radius: 5px 5px; background-color: rgb(233, 194, 67); color: #fff; text-transform: uppercase;">  Sorry you cannot Join  </span></p>
+                  </section>
+                  
                   </section>
         </div>
         <div class="modal-footer">

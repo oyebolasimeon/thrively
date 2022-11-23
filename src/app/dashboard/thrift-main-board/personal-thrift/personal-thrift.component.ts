@@ -1,6 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 import { ThriftService } from '../../thrift/thrift.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class PersonalThriftComponent implements OnInit {
 
   email: any = localStorage.getItem("email")
   accountID: any = localStorage.getItem("accountID");
+  thriftComponentType: any = "Personal Thrift"
 
 
   constructor(private thriftService: ThriftService) { }
@@ -35,7 +37,12 @@ export class PersonalThriftComponent implements OnInit {
       payload.userAccountNumber = this.accountID
 
      this.thriftService.personalThrift(payload).subscribe((res:any) => {
-      console.log(res)
+      Swal.fire({
+        icon: 'success',
+        title: 'Personal Thrift Created',
+        footer: `${res.result}`
+      });
+   
      })
 
     }
