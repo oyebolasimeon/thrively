@@ -24,8 +24,8 @@ export class ThriftlogsComponent implements OnInit {
   fetchAllThrift(){
     const payload = this.accNumber;
     this.thriftService.fetchAllThrift(payload).subscribe((res:any) =>{
-      this.thriftlog = res.result
-      console.log(this.thriftlog)
+      this.thriftlog = res
+      console.log("Logs  ",this.thriftlog)
     })
   }
 

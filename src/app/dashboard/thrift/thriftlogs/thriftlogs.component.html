@@ -15,7 +15,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let record of thriftlog | paginate: { itemsPerPage: 3, currentPage: p }; let i = index">
+          <tr *ngFor="let record of thriftlog?.result | paginate: { itemsPerPage: 3, currentPage: p }; let i = index">
             <td>
               <div class="d-flex align-items-center">
                 <img
@@ -25,13 +25,13 @@
                     class="rounded-circle"
                     />
                 <div class="ml-3">
-                  <p class="fw-bold mb-1">FNCS Cooperative</p>
+                  <p class="fw-bold mb-1"> {{record[i]?.thriftName}} </p>
                   <p class="text-muted mb-0">thrift@ncs.org.ng</p>
                 </div>
               </div>
             </td>
             <td>
-              <p class="fw-normal mb-1">Nigerian Computer Society</p>
+              <p class="fw-normal mb-1">{{record[i]?.email}}</p>
               <p class="text-muted mb-0">Cooperative Department</p>
             </td>
             <td>
@@ -119,4 +119,4 @@
 <!-- Component to show more details for a thrif transaction -->
 
 <app-thrift-inner-details></app-thrift-inner-details>
-<pagination-controls class=" al" style="color: #fff !important;" (pageChange)="p = $event"></pagination-controls>
+<pagination-controls style="color: #fff !important;" (pageChange)="p = $event"></pagination-controls>
