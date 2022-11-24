@@ -44,6 +44,13 @@ export class ThriftlogsComponent implements OnInit {
         // console.log("Logs  ",this.thriftlog)
 
       })
+    } 
+    else{
+      this.thriftService.fetchAllThrift(payload).subscribe((res:any) =>{
+        this.thriftlog = res.result.sort().reverse()
+        // console.log("Logs  ",this.thriftlog)
+
+      })
     }
   
   }

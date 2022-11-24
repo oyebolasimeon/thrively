@@ -12,6 +12,7 @@ export class AuthService {
     "newuser": "/user_onboarding",
     "verify": "/email_verification",
     "join": "/join_thrift",
+    
   }
 
   private BASE_URL = "https://oyebolasimeon.cloud/thrivelyapi/Api";
@@ -51,6 +52,10 @@ export class AuthService {
 
   getThriftByID(id:any){
     return this.http.get(`${this.BASE_URL}/fetch_thrift_details?thriftID=${id}`)
+  }
+
+  getNotification(account: any){
+    return this.http.get(`${this.BASE_URL}/userActivityLog?accountID=${account}`)
   }
 
 

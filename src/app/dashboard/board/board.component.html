@@ -179,27 +179,21 @@
             <div class="col-lg-6">                                           
               <div class="messages-block block">
                 <div class="title"><strong>Notifications</strong></div>
-                <div class="messages"><a href="#" class="message d-flex align-items-center">
-                    <div class="profile"><img src="img/avatar-3.jpg" alt="..." class="img-fluid">
-                      <div class="status online"></div>
-                    </div>
-                    <div class="content">   <strong class="d-block">Nadia Halsey</strong><span class="d-block">lorem ipsum dolor sit amit</span><small class="date d-block">9:30am</small></div></a><a href="#" class="message d-flex align-items-center">
-                    <div class="profile"><img src="img/avatar-2.jpg" alt="..." class="img-fluid">
+                <div class="messages" >
+                  
+                  <a routerLink="/myboard" *ngFor="let notification of notifications  | paginate: { itemsPerPage: 5, currentPage: p }; let i = index;" class="message d-flex align-items-center">
+                    <div class="profile"><img src="./assets/notify.png" alt="..." class="img-fluid">
                       <div class="status away"></div>
                     </div>
-                    <div class="content">   <strong class="d-block">Peter Ramsy</strong><span class="d-block">lorem ipsum dolor sit amit</span><small class="date d-block">7:40am</small></div></a><a href="#" class="message d-flex align-items-center">
-                    <div class="profile"><img src="img/avatar-1.jpg" alt="..." class="img-fluid">
-                      <div class="status busy"></div>
-                    </div>
-                    <div class="content">   <strong class="d-block">Sam Kaheil</strong><span class="d-block">lorem ipsum dolor sit amit</span><small class="date d-block">6:55am</small></div></a><a href="#" class="message d-flex align-items-center">
-                    <div class="profile"><img src="img/avatar-5.jpg" alt="..." class="img-fluid">
-                      <div class="status offline"></div>
-                    </div>
-                    <div class="content">   <strong class="d-block">Sara Wood</strong><span class="d-block">lorem ipsum dolor sit amit</span><small class="date d-block">10:30pm</small></div></a><a href="#" class="message d-flex align-items-center">
-                    <div class="profile"><img src="img/avatar-1.jpg" alt="..." class="img-fluid">
-                      <div class="status online"></div>
-                    </div>
-                    <div class="content">   <strong class="d-block">Nader Magdy</strong><span class="d-block">lorem ipsum dolor sit amit</span><small class="date d-block">9:47pm</small></div></a></div>
+                    <div class="content">  
+                       <strong class="d-block">  </strong>
+                       <span class="d-block">{{notification?.message}}</span>
+                       <small class="date d-block pt-1"> {{notification?.time}} <i class="fa fa-circle"></i> {{notification?.date}} </small>
+                      </div>
+                    </a>
+                   
+                  </div>
+                  <pagination-controls (pageChange)="p = $event"></pagination-controls>
               </div>
             </div>
           </div>
@@ -208,3 +202,6 @@
     
 
 </section>
+
+
+
