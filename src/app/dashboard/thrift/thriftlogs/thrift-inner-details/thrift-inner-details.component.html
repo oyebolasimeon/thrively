@@ -10,8 +10,44 @@
           <p>Attainable Amount: N{{thriftResponse?.attainableAmount}}</p>
           <p>Start Date: {{thriftResponse?.startDate}} </p>
           <p>Thrift Creator: {{userDetails}}</p>
+          <p>Number of Participants: {{thriftResponse?.noOfPeople}} </p>
+          <p>Contact: {{fullUserDetails?.phone}} </p>
        
         </div>
+
+        <section class="no-padding-top">
+          <div class="container-fluid">
+            <div class="row">
+
+              <div class="col-lg-12">                           
+                <div class="block">
+                  <!-- <div class="title"><strong>Inline Form</strong></div> -->
+                  <div class="block-body">
+                    <form  class="form-inline">
+                      <div class="form-group">
+                        <label >Thrift Code</label>
+                        <input id="inlineFormInput thriftcode"
+                       
+                        name="thrift_id" 
+                         type="text" 
+                         value={{thriftResponse?.thriftID}}
+                         readonly
+                         placeholder="Paste Thrift Code" class="mr-sm-3 form-control">
+
+                      <!-- ISA24495 -->
+                      <div class="form-group">
+                        <!-- <input  data-clipboard-target="#thriftcode" value="Click To Copy" class="btn btn-primary"> -->
+                        <button class="btn btn-primary"  (click)="copyText()">Copy</button>
+                        
+                      </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              </div>
+              </div>
+              </section>
         <div class="modal-footer">
             <p>Date & Time Created: {{thriftResponse?.datecreated}} | {{thriftResponse?.timeCreated}} </p>
         </div>

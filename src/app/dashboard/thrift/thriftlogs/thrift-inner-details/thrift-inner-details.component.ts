@@ -1,4 +1,5 @@
 import { ProfileService } from 'src/app/profile/profile.service';
+// import { Clipboard } from '@angular/cdk/clipboard';
 import { ThriftService } from './../../thrift.service';
 import { Component, ComponentRef, ElementRef, EventEmitter, HostListener, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { AuthService } from 'src/app/Service/auth.service';
@@ -13,10 +14,10 @@ export class ThriftInnerDetailsComponent implements OnChanges {
   @Input() itemClicked: any;
   @Output() close = new EventEmitter();
   componentRef!: ComponentRef <ThriftInnerDetailsComponent>;
-  
+  fullUserDetails: any;
   thriftResponse: any;
   userDetails: any;
-  constructor(private thriftService: AuthService, private userService: ProfileService, private host: ElementRef<HTMLElement> ) { }
+  constructor(private thriftService: AuthService, private userService: ProfileService, private host: ElementRef<HTMLElement>) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     this.fetchSingleThrift();
@@ -34,6 +35,15 @@ export class ThriftInnerDetailsComponent implements OnChanges {
   //   console.log('Items destroyed');
   // }
 
+  copyText(){
+    let copyText = document.getElementById("thriftcode")
+    // this.clipboard.copy(copyText?.ariaValueText)
+  //   copyText?.select;
+  //   copyText?.setSelectionRange(0, 99999); // For mobile devices
+
+  //  // Copy the text inside the text field
+  // navigator.clipboard.writeText(copyText.value);
+  }
 
   fetchSingleThrift(){
     const payload = this.itemClicked;
@@ -49,6 +59,7 @@ export class ThriftInnerDetailsComponent implements OnChanges {
     getThriftCreator(id: any){
     let payload = id;
     this.userService.getUserDetails(payload).subscribe((data: any) => {
+      this.fullUserDetails = data.result[0]
       this.userDetails = data.result[0].firstname + ' ' + data.result[0].lastname;
       console.log(this.userDetails)
       // return this.userDetails;

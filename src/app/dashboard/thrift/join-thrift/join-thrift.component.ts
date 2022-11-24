@@ -1,3 +1,4 @@
+import  Swal from 'sweetalert2';
 import { ProfileService } from './../../../profile/profile.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -40,17 +41,17 @@ export class JoinThriftComponent implements OnInit {
     payload.account_id = this.accountID;
      this.thriftPayload = {...payload}
     this.services.getThriftByID(this.thriftPayload.thrift_id).subscribe((res: any) => {
-      this.thriftDetails = res.result[0]
+      
       this.finalJoin = true;
       if(res.status == 204){
         this.thriftDetails = res
         this.finalJoin = false;
       } else  if(res.status == 200){
         // this.joinThrifts(result)
-        this.thriftType = res?.result[0].thriftType;
- 
-        this.thriftDetails = res;
-        console.log(this.thriftDetails)
+        this.thriftDetails = res.result[0];
+        // console.log(this.thriftDetails)
+        this.thriftType = res?.result[0]?.thriftType;
+        // console.log(this.thriftDetails)
       }
       this.getThriftCreator(this.thriftDetails.result[0].userAccountNo);
       
@@ -61,13 +62,21 @@ export class JoinThriftComponent implements OnInit {
     let payload = id;
     this.profileServices.getUserDetails(payload).subscribe((data: any) => {
       this.userDetails = data.result[0];
-      
+      Swal.fire({
+        icon: 'success',
+        title: 'Thrift Joined Successfully, Check your Email.'
+      });
     })
   }
 
   joinThrifts(){
     let res;
-    this.services.joinThrift(this.thriftPayload).subscribe((data: any) => {
+    const payload = {
+      "thrift_id": this.thriftPayload.thrift_id,
+      "account_id": this.accountID
+    }
+    console.log(payload)
+    this.services.joinThrift(payload).subscribe((data: any) => {
       res = data.message
     })
     return res;

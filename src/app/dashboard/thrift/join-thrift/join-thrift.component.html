@@ -63,8 +63,13 @@
                 <section *ngIf="finalJoin"  class="no-padding-bottom">
                   <section *ngIf="thriftType == 'domesticThrift'">
                     <p >Description:  <span class="p-2 "  style="word-wrap: break-word; border-radius: 5px 5px; background-color: rgb(20, 171, 20); color: #fff;"> {{thriftDetails?.description}} </span></p>
-                    <p>Amount: N4000 per Person</p>
-                    <p>Duration: 6 weeks</p>
+                    <p >Thrift Name:  <span class="p-2 "  style="word-wrap: break-word; border-radius: 5px 5px; background-color: rgb(20, 171, 20); color: #fff;"> {{thriftDetails?.thriftName}} </span></p>
+                    <p >Amount:  <span class="p-2 "  style="word-wrap: break-word; border-radius: 5px 5px; background-color: rgb(20, 171, 20); color: #fff;"> {{thriftDetails?.amount}} </span></p>
+                    <p >Attainable Amount:  <span class="p-2 "  style="word-wrap: break-word; border-radius: 5px 5px; background-color: rgb(20, 171, 20); color: #fff;"> {{thriftDetails?.attainableAmount}} </span></p>
+                    <p >Start Date:  <span class="p-2 "  style="word-wrap: break-word; border-radius: 5px 5px; background-color: rgb(20, 171, 20); color: #fff;"> {{thriftDetails?.startDate}} </span></p>
+                    <p >Number of Participants:  <span class="p-2 "  style="word-wrap: break-word; border-radius: 5px 5px; background-color: rgb(20, 171, 20); color: #fff;"> {{thriftDetails?.noOfPeople}} </span></p>
+                    <p >Description:  <span class="p-2 "  style="word-wrap: break-word; border-radius: 5px 5px; background-color: rgb(20, 171, 20); color: #fff;"> {{thriftDetails?.datecreated}} </span></p>
+                    <!-- <p>Duration: 6 weeks</p>
                     <p>Date Created: 4th October, 2022</p>
                       <div class="container-fluid">
                         <div class="row">
@@ -93,7 +98,7 @@
                           </div>
                           </div>
                         </div>
-                        </div>
+                        </div> -->
                   </section>
 
                   <section *ngIf="thriftType == 'personalThrift'">
