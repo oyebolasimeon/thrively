@@ -74,31 +74,23 @@
               <div class="list-inline-item"><a href="#" class="search-open nav-link"><i class="icon-magnifying-glass-browser"></i></a></div>
 
               
-              <div class="list-inline-item dropdown"><a id="navbarDropdownMenuLink1" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link messages-toggle"><i class="icon-email"></i><span class="badge dashbg-1">5</span></a>
+              <div class="list-inline-item dropdown"><a id="navbarDropdownMenuLink1" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link messages-toggle"><i class="icon-email"></i><span class="badge dashbg-1">{{notifyLength}}</span></a>
                 <div aria-labelledby="navbarDropdownMenuLink1" class="dropdown-menu messages">
                   <!-- Messages -->
-                  <a type="button" data-toggle="modal" data-target="#myModal" class="dropdown-item message d-flex align-items-center">
-                    <div class="profile"><img src="/assets/user.jpg" alt="..." class="img-fluid">
+                  <a type="button" *ngFor="let notification of notifications;" class="dropdown-item message d-flex align-items-center">
+                    <div class="profile"><img src="/assets/notify.png" alt="..." class="img-fluid">
                       <div class="status online"></div>
                     </div>
                     <div class="content"> 
                         <strong class="d-block">Message Title</strong>
-                        <span class="d-block">Simeon Added you as a garantor, kindl....</span>
-                        <small class="date d-block">time</small></div>
+                        <span class="d-block"> {{notification?.message}} </span>
+                        <small class="date d-block">{{notification?.time}} <i class="fa fa-circle"></i> {{notification?.date}}</small></div>
                       </a>
 
                       <!-- Message element end -->
                       
                       <!-- Messages -->
-                  <a type="button" data-toggle="modal" data-target="#myModal" class="dropdown-item message d-flex align-items-center">
-                    <div class="profile"><img src="/assets/user.jpg" alt="..." class="img-fluid">
-                      <div class="status online"></div>
-                    </div>
-                    <div class="content"> 
-                        <strong class="d-block">Message Title</strong>
-                        <span class="d-block">Simeon was paid for the month of ...</span>
-                        <small class="date d-block">9:30am</small></div>
-                      </a>
+               
 
                       <!-- Message element end -->
                   
