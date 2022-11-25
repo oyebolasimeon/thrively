@@ -1,3 +1,5 @@
+import { SettingsComponent } from './Settings/settings.component';
+import { ProfileUpdateComponent } from './Settings/profile-update/profile-update.component';
 import { CreateThriftComponent } from './dashboard/thrift/create-thrift/create-thrift.component';
 import { ThriftBoardComponent } from './dashboard/thrift/thrift-board/thrift-board.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -10,6 +12,7 @@ import { CreateThriftsComponent } from './dashboard/thrift/create-thrifts/create
 import { ThriftlogsComponent } from './dashboard/thrift/thriftlogs/thriftlogs.component';
 import { ViewMoreComponent } from './dashboard/thrift/view-more/view-more.component';
 import { VerifyOtpComponent } from './Auth/verify-otp/verify-otp.component';
+import { PaymentCardComponent } from './Payment/payment-card/payment-card.component';
 
 const routes: Routes = [
   {path: 'login', component: SigninComponent},
@@ -19,7 +22,7 @@ const routes: Routes = [
   {path: "thrift", component: ThriftBoardComponent},
   { path: "create-thrift", component: CreateThriftsComponent},
   { path: "join-thrift", component: JoinThriftComponent},
-  {path: "logs", component: ThriftlogsComponent},
+  { path: "logs", component: ThriftlogsComponent},
   { path: "thrift-details/:id", component: ViewMoreComponent },
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: "signup", component: RegisterComponent},

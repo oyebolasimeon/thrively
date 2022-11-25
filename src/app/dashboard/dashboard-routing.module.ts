@@ -1,3 +1,4 @@
+import { CardUpdateComponent } from './../Settings/card-update/card-update.component';
 import { ThriftMainBoardComponent } from './thrift-main-board/thrift-main-board.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -11,6 +12,8 @@ import { ThriftlogsComponent } from './thrift/thriftlogs/thriftlogs.component';
 import { PersonalThriftComponent } from './thrift-main-board/personal-thrift/personal-thrift.component';
 import { DomesticThriftComponent } from './thrift-main-board/domestic-thrift/domestic-thrift.component';
 import { TransferFundsInternallyComponent } from '../Payment/transfer-funds-internally/transfer-funds-internally.component';
+import { ProfileUpdateComponent } from '../Settings/profile-update/profile-update.component';
+import { SettingsComponent } from '../Settings/settings.component';
 
 const routes: Routes = [
   {
@@ -20,6 +23,10 @@ const routes: Routes = [
       {path: 'home', component: BoardComponent, canActivate: [AuthguardGuard]},
       {path: 'payment-details', component: PaymentCardComponent, canActivate: [AuthguardGuard]},
       {path: 'txns', component: ThriftlogsComponent, canActivate: [AuthguardGuard]},
+      { path: "logs", component: ThriftlogsComponent},
+      { path: 'profile-update', component: ProfileUpdateComponent },
+      { path: 'settings', component: SettingsComponent },
+      { path: 'mycard', component: CardUpdateComponent },
       {path: 'thrift-board', component: ThriftMainBoardComponent, canActivate: [AuthguardGuard]},
       {path: 'transfer-funds', component: TransferFundsInternallyComponent, canActivate: [AuthguardGuard]},
       {path: 'domestic', component: DomesticThriftComponent, canActivate: [AuthguardGuard]},

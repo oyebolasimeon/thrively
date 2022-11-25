@@ -29,6 +29,9 @@ import { ThriftAnnounceModalComponent } from './Component/Annoucement/thrift-ann
 import { TransferFundsInternallyComponent } from './Payment/transfer-funds-internally/transfer-funds-internally.component';
 import { VerifyOtpComponent } from './Auth/verify-otp/verify-otp.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ProfileUpdateComponent } from './Settings/profile-update/profile-update.component';
+import { CardUpdateComponent } from './Settings/card-update/card-update.component';
+import { SettingsComponent } from './Settings/settings.component';
 
 
 @NgModule({
@@ -52,7 +55,10 @@ import { NgxPaginationModule } from 'ngx-pagination';
     SideBarComponent,
     ThriftAnnounceModalComponent,
     TransferFundsInternallyComponent,
-    VerifyOtpComponent
+    VerifyOtpComponent,
+    ProfileUpdateComponent,
+    CardUpdateComponent,
+    SettingsComponent
   ],
   imports: [
   
