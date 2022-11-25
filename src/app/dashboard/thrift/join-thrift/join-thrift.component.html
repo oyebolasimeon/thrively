@@ -4,11 +4,11 @@
   <!-- <section class="no-padding-top">
     <div class="container-fluid">
       <div class="row">  -->
-  <div id="joinThrift" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
+  <div id="joinThrift" tabindex="-1" data-backdrop="static" data-keyboard="false"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
     <div role="document" class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header"><strong id="exampleModalLabel" class="modal-title">JOIN A THRIFT</strong>
-          <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+          <button type="button" data-dismiss="modal" (click)="cancelModal()" aria-label="Close" class="close"><span  aria-hidden="true">×</span></button>
         </div>
         <div class="modal-body">
           <p>To join a thrift Paste the thrift Invitation code below. Inserting an Invalid Invitation code will definetly not work. <br>Do well to read the thrift terms and conditions before joining any thrift.</p>
@@ -49,7 +49,7 @@
                           </div>
                          
                         </div>
-                        <span  *ngIf="finalJoin" style="color: red; font-size: 12px;"> {{thriftDetails?.message}} </span>
+                        <span  style="color: red; font-size: 12px;"> {{thriftMessage}} </span>
                       </form>
                     </div>
                   </div>
@@ -64,6 +64,7 @@
                   <section *ngIf="thriftType == 'domesticThrift'">
                     <p >Description:  <span class="p-2 "  style="word-wrap: break-word; border-radius: 5px 5px; background-color: rgb(20, 171, 20); color: #fff;"> {{thriftDetails?.description}} </span></p>
                     <p >Thrift Name:  <span class="p-2 "  style="word-wrap: break-word; border-radius: 5px 5px; background-color: rgb(20, 171, 20); color: #fff;"> {{thriftDetails?.thriftName}} </span></p>
+                    <p >Thrift Creator:  <span class="p-2 "  style="word-wrap: break-word; border-radius: 5px 5px; background-color: rgb(20, 171, 20); color: #fff;"> {{userDetails?.firstname}} {{userDetails?.lastname}} </span></p>
                     <p >Amount:  <span class="p-2 "  style="word-wrap: break-word; border-radius: 5px 5px; background-color: rgb(20, 171, 20); color: #fff;"> {{thriftDetails?.amount}} </span></p>
                     <p >Attainable Amount:  <span class="p-2 "  style="word-wrap: break-word; border-radius: 5px 5px; background-color: rgb(20, 171, 20); color: #fff;"> {{thriftDetails?.attainableAmount}} </span></p>
                     <p >Start Date:  <span class="p-2 "  style="word-wrap: break-word; border-radius: 5px 5px; background-color: rgb(20, 171, 20); color: #fff;"> {{thriftDetails?.startDate}} </span></p>

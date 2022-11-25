@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import  Swal from 'sweetalert2';
 import { ProfileService } from './../../../profile/profile.service';
 import { Component, OnInit } from '@angular/core';
@@ -19,8 +20,12 @@ export class JoinThriftComponent implements OnInit {
   finalJoin = false;
   accountID: any = localStorage.getItem("accountID");
   thriftPayload: any;
+  thriftMessage: any;
 
-  constructor(private services: AuthService, private profileServices: ProfileService) { }
+  constructor(
+    private services: AuthService, 
+    private router: Router,
+    private profileServices: ProfileService) { }
 
   ngOnInit(): void {
   }
@@ -34,6 +39,15 @@ export class JoinThriftComponent implements OnInit {
     history.back();
   }
 
+  cancelModal(){
+    // this.router.navigateByUrl('myboard', {skipLocationChange: true}).then(() => {
+    //   this.router.navigate(['myboard'])
+    this.finalJoin = false;
+    // })
+console.log("Killed Join Thrift")
+    // this.ngOnInit();
+  }
+
   getThrift(){
     
     const payload = this.joinThrift.getRawValue();
@@ -45,15 +59,21 @@ export class JoinThriftComponent implements OnInit {
       this.finalJoin = true;
       if(res.status == 204){
         this.thriftDetails = res
+        this.thriftMessage = res.message;
         this.finalJoin = false;
+        console.log("Thrift Message ",this.thriftMessage);
       } else  if(res.status == 200){
         // this.joinThrifts(result)
-        this.thriftDetails = res.result[0];
+        this.thriftDetails = res?.result[0];
+        this.thriftMessage = res.message;
+        console.log("Thrift Message ",this.thriftMessage);
+        
         // console.log(this.thriftDetails)
         this.thriftType = res?.result[0]?.thriftType;
+        this.getThriftCreator(this.thriftDetails?.userAccountNo);
         // console.log(this.thriftDetails)
       }
-      this.getThriftCreator(this.thriftDetails.result[0].userAccountNo);
+      
       
     })
   }
@@ -62,10 +82,7 @@ export class JoinThriftComponent implements OnInit {
     let payload = id;
     this.profileServices.getUserDetails(payload).subscribe((data: any) => {
       this.userDetails = data.result[0];
-      Swal.fire({
-        icon: 'success',
-        title: 'Thrift Joined Successfully, Check your Email.'
-      });
+     
     })
   }
 
@@ -78,8 +95,21 @@ export class JoinThriftComponent implements OnInit {
     console.log(payload)
     this.services.joinThrift(payload).subscribe((data: any) => {
       res = data.message
+      if(res.status == 200){
+        Swal.fire({
+          icon: 'success',
+          title: 'Thrift Joined Successfully, Check your Email.'
+        });
+      }
+      else if(res.status == 204){
+        Swal.fire({
+          icon: 'success',
+          title: 'You have previously Joined This Thrift'
+        });
+      }
+     
     })
-    return res;
+    // return res;
   }
 
 }

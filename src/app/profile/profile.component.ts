@@ -37,7 +37,7 @@ email = localStorage.getItem("email")
     if(hour >0 && hour <12){
       this.greet = "Morning"
     }
-    else if(hour >12 && hour <15){
+    else if(hour >12 && hour <16){
       this.greet = "Afternoon"
     } else{
       this.greet = "Evening"
@@ -80,6 +80,7 @@ email = localStorage.getItem("email")
     let payload = this.accountID
       this.userProfile.getUserDetails(payload).subscribe((res:any) => {
         this.userData = res.result[0]
+        
       })
   }
 
