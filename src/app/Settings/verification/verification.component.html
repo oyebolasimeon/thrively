@@ -1,0 +1,44 @@
+<section class="personal-thrift">
+    
+    <h2 class="h5 pl-3 text-uppercase">You are a step towards having the full experience of our platform</h2>
+    <section class="no-padding-top">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+                <div class="block">
+                  <div class="title text-uppercase"><strong>Verification Module</strong></div>
+                  <!-- <button type="submit" class="btn btn-secondary">Cancel</button> -->
+                  <div class="block-body">
+                    <form [formGroup]="verifyForm" class="form-horizontal" (ngSubmit)="initiateVerify()"  >
+                      <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">Bank Verification Number</label>
+                        <div class="col-sm-9">
+                          <input type="text" 
+                          class="form-control" 
+                          formControlName="number"
+                          id="number"
+                          name="number"
+                          placeholder="Enter your BVN" 
+                          autocomplete="off" 
+                          required>
+                        </div>
+                      </div>
+                      <div class="line"></div>
+
+                      
+                     
+                      <div class="line"></div>
+                      <div class="form-group row">
+                        <div class="col-sm-9 ml-auto">
+                         
+                          <button type="submit" [disabled]="verifyForm.invalid" class="btn btn-primary">Initiate Verification</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+    </section>
+</section>

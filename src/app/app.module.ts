@@ -32,6 +32,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { ProfileUpdateComponent } from './Settings/profile-update/profile-update.component';
 import { CardUpdateComponent } from './Settings/card-update/card-update.component';
 import { SettingsComponent } from './Settings/settings.component';
+import { VerificationComponent } from './Settings/verification/verification.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { SettingsComponent } from './Settings/settings.component';
     VerifyOtpComponent,
     ProfileUpdateComponent,
     CardUpdateComponent,
-    SettingsComponent
+    SettingsComponent,
+    VerificationComponent
   ],
   imports: [
   

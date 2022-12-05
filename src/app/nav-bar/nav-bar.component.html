@@ -54,7 +54,7 @@
                       <a routerLink="payment-details" class="dropdown-item"> <i class="fa fa-credit-card-alt pr-4"></i> Payment Details</a>
                       <a href="#" class="dropdown-item"> <i class="icon-light-bulb pr-4"></i> Membership </a>
                       <a href="#" class="dropdown-item"> <i class="icon-chart pr-4"></i> Upcoming Feature </a>
-                      <a href="#" class="dropdown-item"> <i class="fa fa-bank pr-4"></i> Verify Account</a>
+                      <a routerLink="verify-me" class="dropdown-item"> <i class="fa fa-bank pr-4"></i> Verify Account</a>
                      <a id="logout" (click)="clearAll()" class="dropdown-item"> <i class="icon-logout pr-4"></i> Logout </a>
                     
                     <!-- </nav> -->
@@ -188,7 +188,7 @@
                   <span class="d-none d-sm-inline-block">User Action</span>
                 </a>
                 <div aria-labelledby="languages" class="dropdown-menu">
-                  <a rel="nofollow" href="#" class="dropdown-item"> 
+                  <a rel="nofollow" routerLink="thrift-board" class="dropdown-item"> 
                     <img src="/assets/user.jpg" style="width: 5vh; border-radius: 100%;"  alt="English" class="mr-2"><span>Become a Thrift Collector</span>
                   </a>
                     <a rel="nofollow" href="#" class="dropdown-item">

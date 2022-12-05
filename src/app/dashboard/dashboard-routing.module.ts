@@ -1,3 +1,4 @@
+import { VerificationComponent } from './../Settings/verification/verification.component';
 import { CardUpdateComponent } from './../Settings/card-update/card-update.component';
 import { ThriftMainBoardComponent } from './thrift-main-board/thrift-main-board.component';
 import { NgModule } from '@angular/core';
@@ -33,6 +34,7 @@ const routes: Routes = [
       {path: 'personal', component: PersonalThriftComponent, canActivate: [AuthguardGuard]},
       {path: 'join-thrift', component: JoinThriftComponent, canActivate: [AuthguardGuard]},
       {path: 'myprofile', component: ProfileComponent, canActivate: [AuthguardGuard]},
+      {path: 'verify-me', component: VerificationComponent, canActivate: [AuthguardGuard]},
     { path: '', redirectTo: 'home', pathMatch: 'full'},
   ]}
   
