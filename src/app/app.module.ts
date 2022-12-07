@@ -26,6 +26,7 @@ import { PreloaderComponent } from './Component/preloader/preloader.component';
 import { NotificationModalComponent } from './Component/notification-modal/notification-modal.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { ThriftAnnounceModalComponent } from './Component/Annoucement/thrift-announce-modal/thrift-announce-modal.component';
+import { FeatureNotReadyComponent } from './Component/feature-not-ready/feature-not-ready.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { ThriftAnnounceModalComponent } from './Component/Annoucement/thrift-ann
     PreloaderComponent,
     NotificationModalComponent,
     SideBarComponent,
-    ThriftAnnounceModalComponent
+    ThriftAnnounceModalComponent,
+    FeatureNotReadyComponent
   ],
   imports: [
   
