@@ -12,11 +12,13 @@ export class AuthService {
     "newuser": "/user_onboarding",
     "verify": "/email_verification",
     "join": "/join_thrift",
+    "bvn": "/api/v2/biometrics/merchant/data/verification/bvn"
     
   }
 
-  private BASE_URL = "https://oyebolasimeon.cloud/thrivelyapi/Api";
+  private BASE_URL = environment.baseUrl;
   private LOGIN_URL = this.BASE_URL + this.endpoint.login;
+  private idPass = environment.verificationUrl;
 
   
 
@@ -31,6 +33,10 @@ export class AuthService {
 
    proceedLogin(userCred: any){
       return this.http.post(this.LOGIN_URL, userCred);
+  }
+
+  accountVerification(id:string){
+    // return this.http.post(this.idTestPass+this.endpoint.bvn, id);
   }
 
   getCountries(){

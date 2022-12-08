@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseUrl: "https://oyebolasimeon.cloud/thrivelyapi/Api",
+  verificationUrl: "https://sandbox.myidentitypass.com",
+  // testVerificationUrl: "https://sandbox.myidentitypass.com"
 };
 
 /*
@@ -12,5 +15,6 @@ export const environment = {
  *
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
+ * https://api.myidentitypay.com/api/v2/biometrics/merchant/data/verification/bvn
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
