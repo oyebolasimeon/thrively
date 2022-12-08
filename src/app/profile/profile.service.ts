@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -6,7 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class ProfileService {
 
-  BASE_URL = "https://oyebolasimeon.cloud/thrivelyapi/Api";
+  BASE_URL = environment.baseUrl;
 
   constructor( private http: HttpClient ) { }
 

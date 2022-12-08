@@ -15,7 +15,7 @@ export class AuthService {
     
   }
 
-  private BASE_URL = "https://oyebolasimeon.cloud/thrivelyapi/Api";
+  private BASE_URL = environment.baseUrl;
   private LOGIN_URL = this.BASE_URL + this.endpoint.login;
 
   
