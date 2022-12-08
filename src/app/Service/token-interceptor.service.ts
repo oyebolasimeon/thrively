@@ -1,22 +1,59 @@
 import { HttpEvent, HttpHandler, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { request } from 'http';
+// import { request } from 'http';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TokenInterceptorService {
+  urlsToNotUse: Array<string>;
+  constructor() { 
 
-  constructor() { }
+    this.urlsToNotUse= [
+      'https://oyebolasimeon.cloud/'
+      // 'myController1/myAction2/.+',
+      // 'myController1/myAction3'
+    ];
+  }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const apiKey = '088567';
-    req = req.clone({
-      headers: req.headers.set('x-api-key', apiKey)      
+
+    if(this.isValidRequestForInterceptor(req.url)){
+
+    
+    const apiKey = 'ZM5gdEkX.d8uS14CkmRZTftW7SNT5mw8O7dYqWVpF';
+    const idKey = 'dc23eff1-e64d-4dfd-ac3a-25afa7ae2f4d'
+
+    let modifiedreq = req.clone({
+      // headers: req.headers.set('x-api-key', apiKey),
+      // headers: req.headers.set('x-api-key', apiKey),    
+      setHeaders: {
+        "x-api-key": `${apiKey}`,
+        "api-id": `${idKey}`,
+        'Access-Control-Allow-Origin': '*'
+      },
+
     });
+    return next.handle(modifiedreq);
+  }
 
     return next.handle(req);
+  }
+
+
+  private isValidRequestForInterceptor(requestUrl: string): boolean {
+    let positionIndicator: string = 'api/';
+    let position = requestUrl.indexOf(positionIndicator);
+    if (position > 0) {
+      let destination: string = requestUrl.substr(position + positionIndicator.length);
+      for (let address of this.urlsToNotUse) {
+        if (new RegExp(address).test(destination)) {
+          return false;
+        }
+      }
+    }
+    return true;
   }
 
   // createAuthorizationHeader(headers: Headers) {

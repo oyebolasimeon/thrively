@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/Service/auth.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,7 +11,8 @@ export class VerificationComponent implements OnInit {
 
   email: any = localStorage.getItem("email")
   accountID: any = localStorage.getItem("accountID");
-  constructor() { }
+  userVerifiedData: any;
+  constructor( private service: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -21,9 +23,16 @@ export class VerificationComponent implements OnInit {
 
   initiateVerify(){
     if(this.verifyForm.valid){
-      const payload = this.verifyForm.getRawValue();
-      payload.email = this.email;
-      payload.userAccountNumber = this.accountID;
+      let payload = this.verifyForm.getRawValue();
+      payload = String(payload.number)
+      console.log("Payload ",payload );
+      
+      // payload.email = this.email;
+      // payload.userAccountNumber = this.accountID;
+      // this.service.accountVerification(payload).subscribe((res:any) => {
+      //   this.userVerifiedData = res;
+      // })
+      
     }
   }
 

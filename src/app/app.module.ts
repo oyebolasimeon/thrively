@@ -1,3 +1,4 @@
+import { TokenInterceptorService } from './Service/token-interceptor.service';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,7 +19,7 @@ import { ThriflogsTableComponent } from './dashboard/thrift/thriflogs-table/thri
 import { JoinThriftComponent } from './dashboard/thrift/join-thrift/join-thrift.component';
 import { CreateThriftsComponent } from './dashboard/thrift/create-thrifts/create-thrifts.component';
 import { NgChartsModule } from 'ng2-charts';
-import { HttpClientModule } from  '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from  '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ViewMoreComponent } from './dashboard/thrift/view-more/view-more.component';
@@ -79,7 +80,13 @@ import { VerificationComponent } from './Settings/verification/verification.comp
     HttpClientModule
   
   ],
-  providers: [],
+  providers: [ 
+    // {
+    //             provide: HTTP_INTERCEPTORS,
+    //             useClass: TokenInterceptorService,
+    //             multi: true,
+    //           }
+              ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
