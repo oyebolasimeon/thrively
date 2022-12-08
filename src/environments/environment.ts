@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   baseUrl: "https://oyebolasimeon.cloud/thrivelyapi/Api",
-  verificationUrl: "https://api.myidentitypay.com",
-  testVerificationUrl: "https://sandbox.myidentitypass.com"
+  verificationUrl: "https://sandbox.myidentitypass.com",
+  // testVerificationUrl: "https://sandbox.myidentitypass.com"
 };
 
 /*

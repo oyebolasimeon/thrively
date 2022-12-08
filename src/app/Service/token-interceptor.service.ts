@@ -22,8 +22,8 @@ export class TokenInterceptorService {
     if(this.isValidRequestForInterceptor(req.url)){
 
     
-    const apiKey = 'ZM5gdEkX.d8uS14CkmRZTftW7SNT5mw8O7dYqWVpF';
-    const idKey = 'dc23eff1-e64d-4dfd-ac3a-25afa7ae2f4d'
+    const apiKey = '';
+    const idKey = ''
 
     let modifiedreq = req.clone({
       // headers: req.headers.set('x-api-key', apiKey),
