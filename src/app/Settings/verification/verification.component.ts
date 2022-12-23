@@ -1,6 +1,7 @@
 import { AuthService } from 'src/app/Service/auth.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-verification',
@@ -23,15 +24,33 @@ export class VerificationComponent implements OnInit {
 
   initiateVerify(){
     if(this.verifyForm.valid){
-      let payload = this.verifyForm.getRawValue();
-      payload = String(payload.number)
-      console.log("Payload ",payload );
+      let payload = {userBVN: String, userAccountNumber: String}
+      payload.userBVN = this.verifyForm.getRawValue().number;
+      // payload = String(payload.number)
       
       // payload.email = this.email;
-      // payload.userAccountNumber = this.accountID;
-      // this.service.accountVerification(payload).subscribe((res:any) => {
-      //   this.userVerifiedData = res;
-      // })
+      payload.userAccountNumber = this.accountID;
+      console.log("Payload ",payload );
+
+      this.service.accountVerification(payload).subscribe((res:any) => {
+        this.userVerifiedData = res;
+        console.log("Response From Verification: ", res);
+        if(res.status == 200){
+          Swal.fire({
+            icon: 'success',
+            title: 'Valid BVN, Account Verified',
+            footer: `${res.message}`
+          });
+        } 
+        else {
+          Swal.fire({
+            icon: 'error',
+            title: 'An Error Ocuured',
+            footer: `${res.message}`
+          });
+        }
+        
+      })
       
     }
   }
