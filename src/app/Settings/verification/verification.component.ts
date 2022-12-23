@@ -30,11 +30,9 @@ export class VerificationComponent implements OnInit {
       
       // payload.email = this.email;
       payload.userAccountNumber = this.accountID;
-      console.log("Payload ",payload );
 
       this.service.accountVerification(payload).subscribe((res:any) => {
         this.userVerifiedData = res;
-        console.log("Response From Verification: ", res);
         if(res.status == 200){
           Swal.fire({
             icon: 'success',
