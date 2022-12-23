@@ -12,7 +12,7 @@ export class AuthService {
     "newuser": "/user_onboarding",
     "verify": "/email_verification",
     "join": "/join_thrift",
-    "bvn": "/api/v2/biometrics/merchant/data/verification/bvn"
+    "upgrade": "/verifyUserAccount"
     
   }
 
@@ -35,8 +35,8 @@ export class AuthService {
       return this.http.post(this.LOGIN_URL, userCred);
   }
 
-  accountVerification(id:string){
-    // return this.http.post(this.idTestPass+this.endpoint.bvn, id);
+  accountVerification(data: object){
+    return this.http.post(this.BASE_URL+this.endpoint.upgrade, data);
   }
 
   getCountries(){
