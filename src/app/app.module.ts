@@ -34,6 +34,7 @@ import { ProfileUpdateComponent } from './Settings/profile-update/profile-update
 import { CardUpdateComponent } from './Settings/card-update/card-update.component';
 import { SettingsComponent } from './Settings/settings.component';
 import { VerificationComponent } from './Settings/verification/verification.component';
+import { ForgetPasswordComponent } from './Auth/forget-password/forget-password.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { VerificationComponent } from './Settings/verification/verification.comp
     ProfileUpdateComponent,
     CardUpdateComponent,
     SettingsComponent,
-    VerificationComponent
+    VerificationComponent,
+    ForgetPasswordComponent
   ],
   imports: [
   
