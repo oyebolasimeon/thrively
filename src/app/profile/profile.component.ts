@@ -68,12 +68,9 @@ email = localStorage.getItem("email")
   }
 
   verified(){
-    localStorage.setItem('accountStatus', 'verified');
-    this.verification = false
-    this.validated = true
-    this.validStatus= localStorage.setItem("validStatus", "Verified")
-    window.location.reload()
     
+    let status = localStorage.getItem("role")
+    return status;
   }
 
   getUserAccount(){
